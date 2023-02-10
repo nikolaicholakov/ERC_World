@@ -13,6 +13,7 @@ export const HeaderContainer = styled("div")`
   align-items: center;
   max-width: 1440px;
   justify-content: space-between;
+  margin: 0 auto;
 `;
 
 export const LeftSide = styled("div")`

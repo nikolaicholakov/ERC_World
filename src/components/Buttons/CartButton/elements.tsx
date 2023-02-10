@@ -23,3 +23,24 @@ export const Button = styled("button")`
 export const Icon = styled(FontAwesomeIcon)`
   color: ${({ theme }) => theme.colors.sectionHeadersColor};
 `;
+
+export const ItemsInCart = styled("div")`
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  background-color: ${({ theme }) => theme.colors.notificationBackground};
+  position: absolute;
+  top: -3px;
+  right: -3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Work Sans;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: center;
+`;

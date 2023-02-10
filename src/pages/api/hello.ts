@@ -1,13 +1,34 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
+import nc from "next-connect";
+import { NextApiRequest, NextApiResponse } from "next";
+import { helloSchema } from "schemas";
+import { ApiResponseBase } from "types";
 
-type Data = {
-  name: string
+export interface HelloRequest extends NextApiRequest {
+  body: { userName: string };
 }
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  res.status(200).json({ name: 'John Doe' })
+export interface HelloResponse {
+  message: `Hello ${string}!`;
 }
+
+const handler = nc<
+  HelloRequest,
+  NextApiResponse<ApiResponseBase<HelloResponse>>
+>({
+  onError: (err, req, res, next) => {
+    console.log(err.message);
+
+    res.status(err.statusCode || 500).json({ error: err.message });
+  },
+  onNoMatch: (req, res) => {
+    res.status(404).end("Page not found");
+  },
+}).post(async (req, res) => {
+  helloSchema.validateSync(req.body);
+
+  const { userName } = req.body;
+
+  return res.status(200).json({ message: `Hello ${userName}!` });
+});
+
+export default handler;

@@ -1,3 +1,5 @@
+import { ImageProps } from "next/image";
+
 type KeyTypes<T> = {
   [K in keyof T]-?: K extends string
     ? string
@@ -22,8 +24,23 @@ export interface IFontAwesomeIcon {
   font: string;
 }
 
-export interface ISwiperCard {
-  image: string;
+export interface IHomeHeroSwiperCard {
+  image: ImageProps;
   title: string;
   subTitle: string;
+}
+
+export interface ITrendingCollectionsSwiperCard {
+  image: ImageProps;
+  name: string;
+  floor: number;
+  volume: number;
+}
+
+export interface IExploreNftCard {
+  image: ImageProps;
+  collectionName: string;
+  nftName: string;
+  nftsAvailable: string | number;
+  price: number;
 }

@@ -44,6 +44,10 @@ export const LinksList = styled("ul")`
   }
 `;
 
+export const SocialsList = styled("ul")`
+  display: flex;
+`;
+
 export const ListItem = styled("li")`
   list-style: none;
   padding: 12px 16px;

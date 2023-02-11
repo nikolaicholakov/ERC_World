@@ -40,7 +40,7 @@ export default class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap'
             rel='stylesheet'
           />
-
+          <link href='/assets/fonts/fonts.css' rel='stylesheet' />
           <link href='/assets/fontawesome/css/solid.css' rel='stylesheet' />
           <link href='/assets/fontawesome/css/brands.css' rel='stylesheet' />
           <link href='/assets/fontawesome/css/regular.css' rel='stylesheet' />

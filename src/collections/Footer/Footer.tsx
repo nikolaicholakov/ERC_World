@@ -40,22 +40,23 @@ export const Footer = ({ ...props }: FooterProps) => {
               <S.Link href='#'>Submit Collection</S.Link>
             </S.ListItem>
           </S.LinksList>
-          <S.IconListItem>
-            <S.Link>
-              <S.Icon content='\f099' font='--fa-font-brands' />
-            </S.Link>
-          </S.IconListItem>
-          <S.IconListItem>
-            <S.Link>
-              <S.Icon content='\f39e' font='--fa-font-brands' />
-            </S.Link>
-          </S.IconListItem>
-          <S.IconListItem>
-            <S.Link>
-              <S.Icon content='\f392' font='--fa-font-brands' />
-            </S.Link>
-          </S.IconListItem>
-          <S.LinksList></S.LinksList>
+          <S.SocialsList>
+            <S.IconListItem>
+              <S.Link>
+                <S.Icon content='\f099' font='--fa-font-brands' />
+              </S.Link>
+            </S.IconListItem>
+            <S.IconListItem>
+              <S.Link>
+                <S.Icon content='\f39e' font='--fa-font-brands' />
+              </S.Link>
+            </S.IconListItem>
+            <S.IconListItem>
+              <S.Link>
+                <S.Icon content='\f392' font='--fa-font-brands' />
+              </S.Link>
+            </S.IconListItem>
+          </S.SocialsList>
         </S.LinksContainer>
       </S.FooterContainer>
     </S.Footer>

@@ -5,6 +5,7 @@ import { ConnectWallet } from "collections/Popups";
 
 export const Header = styled("header")<HeaderProps>`
   background-color: ${({ theme }) => theme.colors.white};
+  box-shadow: ${({ theme }) => theme.shadows.headerShadow};
 `;
 
 export const HeaderContainer = styled("div")`

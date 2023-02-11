@@ -15,12 +15,17 @@ export const theme: DefaultTheme = {
     sectionHeadersColor: "#292D3F",
     loadMoreButtonBackground: "#0B61E114",
     notificationBackground: "#FF0000",
-    bodyBackground: "#B6B6B6"
+    bodyBackground: "#F9F9F9"
   },
   typography,
   gradients: {
     administratorGradiant: "linear-gradient(90deg, #F64C72 0%, #FF9F69 104.26%)",
-    userGradient: "linear-gradient(89.92deg, #2C5CD8 0.06%, #366EFF 99.93%)"
+    userGradient: "linear-gradient(89.92deg, #2C5CD8 0.06%, #366EFF 99.93%)",
+    trendingCollectionShadow: "linear-gradient(270deg, #F9F9F9 0.75%, rgba(249, 249, 249, 0.01))"
+  },
+  shadows: {
+    headerShadow: "0px 8px 24px 0px #0000000F",
+    cardsShadow: "0px 8px 10px 0px #8381960F"
   },
   breakpoint: {
     max: maxWidth,

@@ -69,12 +69,12 @@ export const typography: TypographyStylesProps = {
   },
   loadMoreButtonText: {
     regular: css`
-    font-family: Campton;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 28px;
-    letter-spacing: 0px;
-    text-align: center;
+      font-family: Campton;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 28px;
+      letter-spacing: 0px;
+      text-align: center;
     `
   }
 };

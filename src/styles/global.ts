@@ -24,6 +24,7 @@ export const GlobalStyles = createGlobalStyle`
     *,*::after,*::before { 
         position:relative;
         box-sizing: border-box;
+        /* outline: 1px solid green; */
     } 
 
     h1, h2, h3, h4, h5, span, p, ul, li{

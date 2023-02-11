@@ -21,7 +21,7 @@ declare module "styled-components" {
     | "bodyBackground"
     | "notificationBackground";
 
-  type Gradients = "administratorGradiant" | "userGradient";
+  type Gradients = "administratorGradiant" | "userGradient" | "trendingCollectionShadow";
 
   type Breakpoints = {
     max: MaxWidthBreakpointsType;
@@ -29,7 +29,10 @@ declare module "styled-components" {
     val: BreakpointsValuesType;
   };
 
+  type Shadows = { headerShadow: string; cardsShadow: string };
+
   export interface DefaultTheme {
+    shadows: Shadows;
     colors: Record<Colors, string>;
     gradients: Record<Gradients, string>;
     typography: TypographyStylesProps;

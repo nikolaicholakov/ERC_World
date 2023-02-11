@@ -6,7 +6,7 @@ import {
   H3Props,
   H4Props,
   H5Props,
-  LoadMoreButtonProps,
+  ILoadMoreButtonProps,
   ParagraphProps
 } from ".";
 
@@ -41,7 +41,7 @@ export const Paragraph = styled(({ variant = "regular", ...props }: ParagraphPro
 `;
 
 export const LoadMoreButtonText = styled(
-  ({ variant = "regular", ...props }: LoadMoreButtonProps) => <span {...props} />
+  ({ variant = "regular", ...props }: ILoadMoreButtonProps) => <span {...props} />
 )`
   ${({ variant }) => variant && theme.typography.loadMoreButtonText[variant]}
 `;

@@ -57,11 +57,11 @@ export const Paragraph = ({ variant = "regular", ...props }: ParagraphProps) => 
   return <S.Paragraph {...props} variant={variant} />;
 };
 
-export interface LoadMoreButtonProps extends HTMLSpanProps {
+export interface ILoadMoreButtonProps extends HTMLSpanProps {
   variant?: "regular";
 }
 
-export const LoadMoreButtonText = ({ variant = "regular", ...props }: LoadMoreButtonProps) => {
+export const LoadMoreButtonText = ({ variant = "regular", ...props }: ILoadMoreButtonProps) => {
   return <S.LoadMoreButtonText {...props} variant={variant} />;
 };
 

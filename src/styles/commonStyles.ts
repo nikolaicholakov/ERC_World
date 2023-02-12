@@ -7,6 +7,7 @@ export interface TypographyStylesProps {
   h4: { regular: FlattenSimpleInterpolation };
   h5: { regular: FlattenSimpleInterpolation };
   h6: { regular: FlattenSimpleInterpolation };
+  h7: { regular: FlattenSimpleInterpolation };
   p: {
     regular: FlattenSimpleInterpolation;
   };
@@ -62,6 +63,14 @@ export const typography: TypographyStylesProps = {
       font-size: 14px;
       font-weight: 500;
       line-height: 1.43;
+    `
+  },
+  h7: {
+    regular: css`
+      font-family: Work Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.17;
     `
   },
   p: {

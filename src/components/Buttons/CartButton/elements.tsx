@@ -37,10 +37,7 @@ export const ItemsInCart = styled("div")`
   align-items: center;
   justify-content: center;
 
-  font-family: Work Sans;
-  font-size: 12px;
+  ${({ theme }) => theme.typography.h7.regular};
   font-weight: 500;
-  line-height: 14px;
-  letter-spacing: 0em;
   text-align: center;
 `;

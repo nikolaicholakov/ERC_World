@@ -15,6 +15,7 @@ declare module "styled-components" {
     | "grey"
     | "white"
     | "swiperActive"
+    | "tableRowBackground"
     | "swiperInActive"
     | "sectionHeadersColor"
     | "loadMoreButtonBackground"

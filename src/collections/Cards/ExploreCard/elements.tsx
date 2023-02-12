@@ -55,6 +55,10 @@ export const InfoText = styled("span")`
   font-weight: 400;
 `;
 
+export const InfoTextBolder = styled("span")`
+  ${({ theme }) => theme.typography.h6.regular};
+`;
+
 export const Price = styled("span")`
   ${({ theme }) => theme.typography.h5.regular};
   color: ${({ theme }) => theme.colors.buttonColor};
@@ -64,4 +68,5 @@ export const LikeButton = styled(_LikeButton)`
   position: absolute;
   top: 22px;
   right: 21px;
+  font-size: 18px;
 `;

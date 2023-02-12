@@ -34,6 +34,10 @@ export const Heading6 = styled(({ variant = "regular", ...props }: H5Props) => <
   ${({ variant }) => variant && theme.typography.h6[variant]}
 `;
 
+export const Heading7 = styled(({ variant = "regular", ...props }: H5Props) => <h5 {...props} />)`
+  ${({ variant }) => variant && theme.typography.h7[variant]}
+`;
+
 export const Paragraph = styled(({ variant = "regular", ...props }: ParagraphProps) => (
   <p {...props} />
 ))`

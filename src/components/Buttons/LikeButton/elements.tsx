@@ -13,12 +13,17 @@ export const Button = styled("button")`
   border: none;
   color: ${({ theme }) => theme.colors.white};
   background-color: transparent;
+  ${({ theme }) => theme.typography.h6.regular}
 
   cursor: pointer;
 `;
 
-export const Icon = styled(FontAwesomeIcon)<{ liked: boolean }>`
-  color: ${({ liked, theme }) => (liked ? theme.colors.buttonColor : theme.colors.white)};
+export const Text = styled("span")<{ liked: boolean }>`
+  color: ${({ liked, theme }) => (liked ? theme.colors.buttonColor : "inherit")};
+  margin-right: 5px;
+`;
 
-  font-size: 18px;
+export const Icon = styled(FontAwesomeIcon)<{ liked: boolean }>`
+  color: ${({ liked, theme }) => (liked ? theme.colors.buttonColor : "inherit")};
+  font-size: inherit;
 `;

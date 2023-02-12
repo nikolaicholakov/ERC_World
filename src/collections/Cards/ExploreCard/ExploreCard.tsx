@@ -25,7 +25,7 @@ export const ExploreCard: React.FC<IExploreCardProps> = ({
         <S.Title>{nftName}</S.Title>
         <S.InfoContainer>
           <S.InfoText>Items available</S.InfoText>
-          <S.InfoText>{nftsAvailable}</S.InfoText>
+          <S.InfoTextBolder>{nftsAvailable}</S.InfoTextBolder>
         </S.InfoContainer>
         <S.InfoContainer>
           <S.InfoText>Price</S.InfoText>

@@ -6,7 +6,7 @@ export interface IconButtonProps extends IFontAwesomeIcon {
   ref?: RefObject<HTMLButtonElement>;
 }
 
-export const IconButton: React.FC<IconButtonProps> = ({ content, font, ...props }) => {
+export const IconButton: React.FC<IconButtonProps> = ({ children, content, font, ...props }) => {
   return (
     <S.Button {...props}>
       <S.Icon content={content} font={font} />

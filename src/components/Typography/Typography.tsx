@@ -49,6 +49,10 @@ export const H6 = ({ variant = "regular", ...props }: H6Props) => {
   return <S.Heading6 {...props} variant={variant} />;
 };
 
+export const H7 = ({ variant = "regular", ...props }: H6Props) => {
+  return <S.Heading7 {...props} variant={variant} />;
+};
+
 export interface ParagraphProps extends HTMLHeadingProps {
   variant?: "regular";
 }
@@ -72,6 +76,7 @@ export const Typography = {
   H4,
   H5,
   H6,
+  H7,
   Paragraph,
   LoadMoreButtonText
 };

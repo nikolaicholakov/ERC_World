@@ -8,3 +8,7 @@ export * from "./FontAwesomeIcon";
 export * from "./Swiper";
 export * from "./Popup";
 export * from "./Buttons";
+export * from "./NftCreatorOrCollection";
+export * from "./TableUser";
+export * from "./NftSeller";
+export * from "./TableComponents";

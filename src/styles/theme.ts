@@ -15,7 +15,8 @@ export const theme: DefaultTheme = {
     sectionHeadersColor: "#292D3F",
     loadMoreButtonBackground: "#0B61E114",
     notificationBackground: "#FF0000",
-    bodyBackground: "#F9F9F9"
+    bodyBackground: "#F9F9F9",
+    tableRowBackground: "#FAFAFA"
   },
   typography,
   gradients: {

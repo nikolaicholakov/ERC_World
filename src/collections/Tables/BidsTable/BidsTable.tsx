@@ -10,15 +10,17 @@ export interface IBidsTableProps {
 export const BidsTable: React.FC<IBidsTableProps> = ({ tableData, ...props }) => (
   <S.HistoryTable {...props}>
     <S.HistoryTableHead>
-      <S.HistoryTableHeadColumn>User Name</S.HistoryTableHeadColumn>
-      <S.HistoryTableHeadColumn>Type</S.HistoryTableHeadColumn>
-      <S.HistoryTableHeadColumn>Date</S.HistoryTableHeadColumn>
-      <S.HistoryTableHeadColumn>Offer Price</S.HistoryTableHeadColumn>
+      <S.HistoryTableHeaderRow>
+        <S.HistoryTableHeadColumn>User Name</S.HistoryTableHeadColumn>
+        <S.HistoryTableHeadColumn>Type</S.HistoryTableHeadColumn>
+        <S.HistoryTableHeadColumn>Date</S.HistoryTableHeadColumn>
+        <S.HistoryTableHeadColumn>Offer Price</S.HistoryTableHeadColumn>
+      </S.HistoryTableHeaderRow>
     </S.HistoryTableHead>
     <S.HistoryTableBody>
       {tableData.map((row, i) => (
         <>
-          <S.HistoryTableRow key={"historyRow" + i}>
+          <S.HistoryTableRow key={"bidsRow" + i}>
             <S.HistoryTableData>
               <S.User img={row.userImg}>{row.userName}</S.User>
             </S.HistoryTableData>
@@ -26,7 +28,7 @@ export const BidsTable: React.FC<IBidsTableProps> = ({ tableData, ...props }) =>
             <S.HistoryTableData>{row.date}</S.HistoryTableData>
             <S.HistoryTableData>{row.offeredPrice} MATIC</S.HistoryTableData>
           </S.HistoryTableRow>
-          <S.SpacingRow key={"spacingRow" + i} />
+          <S.SpacingRow key={"bidsSpacingRow" + i} />
         </>
       ))}
     </S.HistoryTableBody>

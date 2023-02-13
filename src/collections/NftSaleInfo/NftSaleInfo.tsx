@@ -8,6 +8,17 @@ interface INftSaleInfoProps extends HTMLDivProps {
 }
 
 export const NftSaleInfo: React.FC<INftSaleInfoProps> = ({ saleBy, ...props }) => {
+  const [purchasePopupOpened, setPurchasePopupOpened] = useState<boolean>(false);
+  const [makeOfferPopupOpened, setMakeOfferPopupOpened] = useState<boolean>(false);
+
+  const togglePurchasePopup = (state: boolean) => () => {
+    setPurchasePopupOpened(state);
+  };
+
+  const toggleMakeOfferPopup = (state: boolean) => () => {
+    setMakeOfferPopupOpened(state);
+  };
+
   return (
     <S.InfoContainer {...props}>
       <S.FirstRow>
@@ -66,8 +77,27 @@ export const NftSaleInfo: React.FC<INftSaleInfoProps> = ({ saleBy, ...props }) =
         <S.SellerInfo />
         <S.ActionsContainer>
           <S.AddToCart />
-          {saleBy === "user" && <S.MakeOfferButton>Make an Offer</S.MakeOfferButton>}
-          <S.BuyButton saleBy={saleBy}>Buy now</S.BuyButton>
+          {saleBy === "user" && (
+            <S.MakeOfferButton onClick={toggleMakeOfferPopup(true)}>
+              Make an Offer
+            </S.MakeOfferButton>
+          )}
+
+          {makeOfferPopupOpened && (
+            <S.MakeAnOfferPopup
+              popupOpened={makeOfferPopupOpened}
+              togglePopup={toggleMakeOfferPopup}
+            />
+          )}
+          <S.BuyButton saleBy={saleBy} onClick={togglePurchasePopup(true)}>
+            Buy now
+          </S.BuyButton>
+          {purchasePopupOpened && (
+            <S.PurchaseNftPopup
+              popupOpened={purchasePopupOpened}
+              togglePopup={togglePurchasePopup}
+            />
+          )}
         </S.ActionsContainer>
       </S.LastRow>
     </S.InfoContainer>

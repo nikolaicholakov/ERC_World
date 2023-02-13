@@ -2,6 +2,7 @@ import * as S from "./elements";
 import type { HTMLHeaderProps } from "types";
 import { useState } from "react";
 import { useWalletConnected } from "hooks";
+import Link from "next/link";
 
 export interface HeaderProps extends HTMLHeaderProps {}
 
@@ -39,7 +40,9 @@ export const Header = ({ ...props }: HeaderProps) => {
             <S.LineSeparator />
             <S.CreateNftButton>Create NFT</S.CreateNftButton>
             <S.WalletButton content='\f555' font='--fa-font-solid' />
-            <S.ProfileButton content='\f007' font='--fa-font-regular' />
+            <Link href={"/profile/user_name"}>
+              <S.ProfileButton content='\f007' font='--fa-font-regular' />
+            </Link>
           </S.Connected>
         ) : (
           <S.NotConnected>

@@ -19,6 +19,10 @@ export const HistoryTable = styled(Table)``;
 
 export const HistoryTableHead = styled(TableHead)``;
 
+export const HistoryTableHeaderRow = styled(TableRow)`
+  background-color: ${({ theme }) => theme.colors.white};
+`;
+
 export const HistoryTableHeadColumn = styled(TableHeadColumn)`
   &:nth-of-type(3),
   &:nth-of-type(5) {

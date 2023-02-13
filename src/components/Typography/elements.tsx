@@ -14,6 +14,12 @@ export const Heading1 = styled(({ variant = "regular", ...props }: H1Props) => <
   ${({ variant }) => variant && theme.typography.h1[variant]}
 `;
 
+export const UserName = styled(({ variant = "regular", ...props }: ILoadMoreButtonProps) => (
+  <span {...props} />
+))`
+  ${({ variant }) => variant && theme.typography.userName[variant]}
+`;
+
 export const Heading2 = styled(({ variant = "regular", ...props }: H2Props) => <h2 {...props} />)`
   ${({ variant }) => variant && theme.typography.h2[variant]}
 `;

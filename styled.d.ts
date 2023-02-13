@@ -14,6 +14,7 @@ declare module "styled-components" {
     | "buttonColor"
     | "grey"
     | "white"
+    | "lightButtonColor"
     | "swiperActive"
     | "tableRowBackground"
     | "swiperInActive"

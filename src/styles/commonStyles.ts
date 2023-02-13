@@ -14,6 +14,9 @@ export interface TypographyStylesProps {
   loadMoreButtonText: {
     regular: FlattenSimpleInterpolation;
   };
+  userName: {
+    regular: FlattenSimpleInterpolation;
+  };
 }
 
 export const typography: TypographyStylesProps = {
@@ -81,6 +84,16 @@ export const typography: TypographyStylesProps = {
       font-family: Campton;
       font-size: 16px;
       font-weight: 500;
+      line-height: 28px;
+      letter-spacing: 0px;
+      text-align: center;
+    `
+  },
+  userName: {
+    regular: css`
+      font-family: Campton;
+      font-size: 20px;
+      font-weight: 600;
       line-height: 28px;
       letter-spacing: 0px;
       text-align: center;

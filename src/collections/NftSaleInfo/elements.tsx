@@ -12,6 +12,7 @@ import {
   Popup as _Popup,
   Typography
 } from "components";
+import { MakeAnOffer, PurchaseNft } from "collections/Popups";
 
 export const Image = styled(_Image)``;
 
@@ -213,3 +214,7 @@ export const LikesButton = styled(LikeButton)`
   height: 32px;
   width: 75px;
 `;
+
+export const PurchaseNftPopup = styled(PurchaseNft)``;
+
+export const MakeAnOfferPopup = styled(MakeAnOffer)``;

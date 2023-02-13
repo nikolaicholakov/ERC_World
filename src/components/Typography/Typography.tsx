@@ -9,6 +9,10 @@ export const H1 = ({ variant = "regular", ...props }: H1Props) => {
   return <S.Heading1 {...props} variant={variant} />;
 };
 
+export const UserName = ({ variant = "regular", ...props }: ILoadMoreButtonProps) => {
+  return <S.UserName {...props} variant={variant} />;
+};
+
 export interface H2Props extends HTMLHeadingProps {
   variant?: "regular";
 }
@@ -71,6 +75,7 @@ export const LoadMoreButtonText = ({ variant = "regular", ...props }: ILoadMoreB
 
 export const Typography = {
   H1,
+  UserName,
   H2,
   H3,
   H4,

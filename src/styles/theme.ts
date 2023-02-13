@@ -10,6 +10,7 @@ export const theme: DefaultTheme = {
     white: "#FFFFFF",
     grey: "#ECECEC",
     buttonColor: "#0B61E1",
+    lightButtonColor: "#3682F4",
     swiperActive: "#4A5055",
     swiperInActive: "#03030329",
     sectionHeadersColor: "#292D3F",

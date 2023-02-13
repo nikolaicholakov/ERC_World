@@ -29,6 +29,10 @@ export const HistoryTableBody = styled(TableBody)``;
 
 export const HistoryTableRow = styled(TableRow)``;
 
+export const HistoryTableHeaderRow = styled(TableRow)`
+  background-color: ${({ theme }) => theme.colors.white};
+`;
+
 export const SpacingRow = styled(TableSpacingRow)``;
 
 export const HistoryTableData = styled(TableData)`

@@ -1,8 +1,8 @@
 import { RefObject } from "react";
-import { HTMLDivProps } from "types";
+import { HTMLSectionProps } from "types";
 import * as S from "./elements";
 
-export interface SectionProps extends HTMLDivProps {
+export interface SectionProps extends HTMLSectionProps {
   ref?: RefObject<HTMLDivElement>;
 }
 

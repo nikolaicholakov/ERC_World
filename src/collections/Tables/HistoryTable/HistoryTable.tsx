@@ -10,11 +10,13 @@ export interface IHistoryTableProps {
 export const HistoryTable: React.FC<IHistoryTableProps> = ({ tableData, ...props }) => (
   <S.HistoryTable {...props}>
     <S.HistoryTableHead>
-      <S.HistoryTableHeadColumn>From</S.HistoryTableHeadColumn>
-      <S.HistoryTableHeadColumn>To</S.HistoryTableHeadColumn>
-      <S.HistoryTableHeadColumn>Type</S.HistoryTableHeadColumn>
-      <S.HistoryTableHeadColumn>Date</S.HistoryTableHeadColumn>
-      <S.HistoryTableHeadColumn>Price</S.HistoryTableHeadColumn>
+      <S.HistoryTableHeaderRow>
+        <S.HistoryTableHeadColumn>From</S.HistoryTableHeadColumn>
+        <S.HistoryTableHeadColumn>To</S.HistoryTableHeadColumn>
+        <S.HistoryTableHeadColumn>Type</S.HistoryTableHeadColumn>
+        <S.HistoryTableHeadColumn>Date</S.HistoryTableHeadColumn>
+        <S.HistoryTableHeadColumn>Price</S.HistoryTableHeadColumn>
+      </S.HistoryTableHeaderRow>
     </S.HistoryTableHead>
     <S.HistoryTableBody>
       {tableData.map((row, i) => (
@@ -30,7 +32,7 @@ export const HistoryTable: React.FC<IHistoryTableProps> = ({ tableData, ...props
             <S.HistoryTableData>{row.date}</S.HistoryTableData>
             <S.HistoryTableData>{row.price} MATIC</S.HistoryTableData>
           </S.HistoryTableRow>
-          <S.SpacingRow key={"spacingRow" + i} />
+          <S.SpacingRow key={"historySpacingRow" + i} />
         </>
       ))}
     </S.HistoryTableBody>

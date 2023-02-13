@@ -5,6 +5,7 @@ import { theme, GlobalStyles } from "styles";
 import { Header, Footer } from "collections";
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 import { WalletContextProvider } from "contexts";
+import React from "react";
 
 // storyblokInit({
 //   accessToken: process?.env?.NEXT_PUBLIC_STORYBLOK_PREVIEW_TOKEN,
@@ -25,7 +26,9 @@ function MyApp({ Component, pageProps }: any) {
         </Head>
         <GlobalStyles />
         <Header />
-        <Component {...pageProps} />
+        <React.StrictMode>
+          <Component {...pageProps} />
+        </React.StrictMode>
         <Footer />
       </WalletContextProvider>
     </ThemeProvider>

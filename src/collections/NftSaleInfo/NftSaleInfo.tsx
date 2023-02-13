@@ -13,10 +13,12 @@ export const NftSaleInfo: React.FC<INftSaleInfoProps> = ({ saleBy, ...props }) =
 
   const togglePurchasePopup = (state: boolean) => () => {
     setPurchasePopupOpened(state);
+    document.body.style.overflow = state ? "hidden" : "auto";
   };
 
   const toggleMakeOfferPopup = (state: boolean) => () => {
     setMakeOfferPopupOpened(state);
+    document.body.style.overflow = state ? "hidden" : "auto";
   };
 
   return (

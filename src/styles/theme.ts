@@ -17,7 +17,9 @@ export const theme: DefaultTheme = {
     loadMoreButtonBackground: "#0B61E114",
     notificationBackground: "#FF0000",
     bodyBackground: "#F9F9F9",
-    tableRowBackground: "#FAFAFA"
+    tableRowBackground: "#FAFAFA",
+    scrollbarTrack: "#71718626",
+    scrollbarThumb: "#2A2A3A33"
   },
   typography,
   gradients: {

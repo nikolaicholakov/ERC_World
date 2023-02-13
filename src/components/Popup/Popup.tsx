@@ -1,4 +1,4 @@
-import React, { RefObject, useState } from "react";
+import React, { RefObject, useEffect, useState } from "react";
 import { HTMLDivProps } from "types";
 import * as S from "./elements";
 
@@ -9,5 +9,5 @@ interface IPopupProps extends HTMLDivProps {
 }
 
 export const Popup: React.FC<IPopupProps> = ({ togglePopup, popupOpened, ...props }) => {
-  return <S.PopupContainer onClick={togglePopup}></S.PopupContainer>;
+  return <S.PopupContainer {...props} onClick={togglePopup}></S.PopupContainer>;
 };

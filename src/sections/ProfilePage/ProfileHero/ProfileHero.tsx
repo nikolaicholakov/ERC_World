@@ -7,6 +7,15 @@ interface IProfileHeroProps extends HTMLSectionProps {
 }
 
 export const ProfileHero: React.FC<IProfileHeroProps> = ({ ...props }) => {
+  const [checkFollowersPopupOpened, setCheckedFollowersPopupOpened] = useState<
+    "following" | "followers" | false
+  >(false);
+
+  const handleCheckFollowers = (state: "following" | "followers" | false) => () => {
+    setCheckedFollowersPopupOpened(state);
+    document.body.style.overflow = state !== false ? "hidden" : "auto";
+  };
+
   return (
     <S.Container {...props}>
       <S.ProfileBackgroundImage>
@@ -27,14 +36,26 @@ export const ProfileHero: React.FC<IProfileHeroProps> = ({ ...props }) => {
           </S.Bio>
         </S.Row>
         <S.Row>
-          <S.FollowingBlock>
+          <S.FollowingBlock onClick={handleCheckFollowers("following")}>
             <S.FollowCount>22</S.FollowCount>
             <S.FollowText>Following</S.FollowText>
           </S.FollowingBlock>
-          <S.FollowingBlock>
+          {checkFollowersPopupOpened === "following" && (
+            <S.CheckFollowersPopup
+              togglePopup={handleCheckFollowers}
+              popupOpened={checkFollowersPopupOpened}
+            />
+          )}
+          <S.FollowingBlock onClick={handleCheckFollowers("followers")}>
             <S.FollowCount>22</S.FollowCount>
             <S.FollowText>Followers</S.FollowText>
           </S.FollowingBlock>
+          {checkFollowersPopupOpened === "followers" && (
+            <S.CheckFollowersPopup
+              togglePopup={handleCheckFollowers}
+              popupOpened={checkFollowersPopupOpened}
+            />
+          )}
         </S.Row>
         <S.Row>
           <S.CreateNftButton>Create Nft</S.CreateNftButton>

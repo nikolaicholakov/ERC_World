@@ -1,6 +1,6 @@
 import * as S from "./elements";
 import type { HTMLHeaderProps } from "types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useWalletConnected } from "hooks";
 import Link from "next/link";
 
@@ -11,6 +11,7 @@ export const Header = ({ ...props }: HeaderProps) => {
 
   const togglePopup = (state: boolean) => () => {
     setPopupOpened(state);
+    document.body.style.overflow = state ? "hidden" : "auto";
   };
 
   const { walletConnected } = useWalletConnected();

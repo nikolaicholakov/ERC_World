@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import _Image from "next/image";
 import { Button, CopyBlockchainAdress, OtherSettings, Section, Typography } from "components";
+import { Followers } from "collections";
 
 export const Image = styled(_Image)``;
 
@@ -75,6 +76,7 @@ export const Bio = styled(Typography.H6)`
 
 export const FollowingBlock = styled("div")`
   display: flex;
+  cursor: pointer;
   flex-direction: column;
   align-items: center;
   &:first-of-type {
@@ -108,3 +110,5 @@ export const EditProfileButton = styled(CreateNftButton)`
 `;
 
 export const OtherSettingsButton = styled(OtherSettings)``;
+
+export const CheckFollowersPopup = styled(Followers)``;

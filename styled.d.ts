@@ -20,6 +20,8 @@ declare module "styled-components" {
     | "swiperInActive"
     | "sectionHeadersColor"
     | "loadMoreButtonBackground"
+    | "scrollbarTrack"
+    | "scrollbarThumb"
     | "bodyBackground"
     | "notificationBackground";
 

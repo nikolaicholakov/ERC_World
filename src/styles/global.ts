@@ -35,4 +35,17 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
     }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: ${({ theme }) => theme.colors.scrollbarTrack};
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        border-radius:8px;
+        background: ${({ theme }) => theme.colors.scrollbarThumb};
+      }
 `;

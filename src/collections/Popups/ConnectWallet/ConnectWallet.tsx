@@ -19,6 +19,7 @@ export const ConnectWallet: React.FC<IConnectWalletProps> = ({
   const connectWallet = () => {
     togglePopup(false);
     setWalletConnected(true);
+    document.body.style.overflow = "auto";
   };
 
   return (

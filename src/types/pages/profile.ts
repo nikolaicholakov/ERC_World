@@ -17,3 +17,11 @@ export interface ICreatedNftCard {
   // using price so i dont use another exampleCards data object
   price: number;
 }
+
+export interface ICartCard {
+  image: string;
+  collectionName: string;
+  nftName: string;
+  priceInCrypto: number;
+  priceInDollars: number;
+}

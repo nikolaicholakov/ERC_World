@@ -7,10 +7,16 @@ import Link from "next/link";
 export interface HeaderProps extends HTMLHeaderProps {}
 
 export const Header = ({ ...props }: HeaderProps) => {
-  const [popupOpened, setPopupOpened] = useState<boolean>(false);
+  const [walletPopupOpened, setWalletPopupOpened] = useState<boolean>(false);
+  const [cartPopupOpened, setCartPopupOpened] = useState<boolean>(false);
 
-  const togglePopup = (state: boolean) => () => {
-    setPopupOpened(state);
+  const toggleWalletPopup = (state: boolean) => () => {
+    setWalletPopupOpened(state);
+    document.body.style.overflow = state ? "hidden" : "auto";
+  };
+
+  const toggleCartPopup = (state: boolean) => () => {
+    setCartPopupOpened(state);
     document.body.style.overflow = state ? "hidden" : "auto";
   };
 
@@ -37,7 +43,10 @@ export const Header = ({ ...props }: HeaderProps) => {
         </S.LeftSide>
         {walletConnected ? (
           <S.Connected>
-            <S.CartButton />
+            <S.CartButton onClick={toggleCartPopup(true)} />
+            {cartPopupOpened && (
+              <S.CartPopup togglePopup={toggleCartPopup} popupOpened={cartPopupOpened} />
+            )}
             <S.LineSeparator />
             <S.CreateNftButton>Create NFT</S.CreateNftButton>
             <S.WalletButton content='\f555' font='--fa-font-solid' />
@@ -47,11 +56,14 @@ export const Header = ({ ...props }: HeaderProps) => {
           </S.Connected>
         ) : (
           <S.NotConnected>
-            <S.ConnectWalletButton onClick={togglePopup(true)}>
+            <S.ConnectWalletButton onClick={toggleWalletPopup(true)}>
               Connect Wallet
             </S.ConnectWalletButton>
-            {popupOpened && (
-              <S.ConnectWalletPopup togglePopup={togglePopup} popupOpened={popupOpened} />
+            {walletPopupOpened && (
+              <S.ConnectWalletPopup
+                togglePopup={toggleWalletPopup}
+                popupOpened={walletPopupOpened}
+              />
             )}
           </S.NotConnected>
         )}

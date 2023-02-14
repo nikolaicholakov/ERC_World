@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import type { HeaderProps } from "./Header";
 import { Button, Logo as _Logo, IconButton, CartButton as _CartButton } from "components";
-import { ConnectWallet } from "collections/Popups";
+import { CartPopup as _CartPopup, ConnectWallet } from "collections/Popups";
 
 export const Header = styled("header")<HeaderProps>`
   background-color: ${({ theme }) => theme.colors.white};
@@ -93,3 +93,5 @@ export const LineSeparator = styled("div")`
   background-color: ${({ theme }) => theme.colors.grey};
   margin-right: 16px;
 `;
+
+export const CartPopup = styled(_CartPopup)``;

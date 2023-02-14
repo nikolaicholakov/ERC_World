@@ -48,26 +48,28 @@ export const AuctionSellNftForm = ({ togglePopup, ...props }: AuctionSellNftForm
   return (
     <S.Form {...props} onSubmit={handleSubmit(onSubmit)}>
       <S.Title>Auction Sell</S.Title>
-      <S.Input
-        control={control}
-        name='startPrice'
-        label='Start Price'
-        placeholder='Enter Start Price'
-      />
-      <S.Input
-        control={control}
-        name='minimumSteps'
-        label='Minimum step between auction bids'
-        placeholder='Insert auction step value'
-      />
-      <S.Input control={control} name='startData' label='Auction start date' />
-      <S.Input control={control} name='duration' label='Auction duration' />
-      <S.Input
-        control={control}
-        name='buyNowPrice'
-        label='Buy Now Price'
-        placeholder='Insert Buy Now Price'
-      />
+      <S.InputsContainer>
+        <S.Input
+          control={control}
+          name='startPrice'
+          label='Start Price'
+          placeholder='Enter Start Price'
+        />
+        <S.Input
+          control={control}
+          name='minimumSteps'
+          label='Minimum step between auction bids'
+          placeholder='Insert auction step value'
+        />
+        <S.Input control={control} name='startData' label='Auction start date' />
+        <S.Input control={control} name='duration' label='Auction duration' />
+        <S.Input
+          control={control}
+          name='buyNowPrice'
+          label='Buy Now Price'
+          placeholder='Insert Buy Now Price'
+        />
+      </S.InputsContainer>
       <S.ToReceiveContainer>
         <S.Text>Total to receive</S.Text>
         <S.Wrapper>

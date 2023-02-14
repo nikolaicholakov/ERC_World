@@ -49,12 +49,25 @@ export const CreateAuctionButton = styled(_Button)`
 
 export const Input = styled(FormDropdownInput)``;
 
+export const InputsContainer = styled("div")`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+
+  > * {
+    margin-bottom: 24px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+`;
+
 export const ToReceiveContainer = styled("div")`
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 40px;
-  padding-top: 16px;
 `;
 
 export const Text = styled(Typography.H6)`

@@ -11,6 +11,7 @@ export const SectionWrapper = styled("section")`
   padding-inline: 180px;
   max-width: 1440px;
   margin: 0 auto;
+  width: 100%;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     /* padding: 0 20px; */

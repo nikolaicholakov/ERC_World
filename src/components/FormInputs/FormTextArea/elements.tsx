@@ -1,51 +1,33 @@
+import { Typography } from "components/Typography";
 import styled from "styled-components";
 import type { FormTextAreaProps } from "./TextArea";
 
-export const Container = styled("div")``;
-
-export const InputWrapper = styled("div")`
-  display: flex;
-  flex-direction: column;
+export const Label = styled("label")`
   width: 100%;
 `;
 
-export const Label = styled("label")`
-  white-space: nowrap;
-  font-family: "Crimson Text", Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.8;
-  margin-bottom: 0.2em;
-`;
-
-export const ErrorText = styled("p")`
-  white-space: nowrap;
-  font-family: "Crimson Text", Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.8;
+export const LabelText = styled(Typography.H7)`
+  font-weight: 500;
   margin-bottom: 5px;
-  margin: 0;
+  text-transform: capitalize;
 `;
 
-export const TextArea = styled("textarea")<FormTextAreaProps>`
-  appearance: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: unset;
+export const ErrorText = styled("p")``;
+
+export const Input = styled("textarea")`
+  width: 100%;
+  border: none;
   background-color: transparent;
   outline: none;
-  background: transparent;
-  padding: 0.8em;
+  padding: 16px;
+  color: ${({ theme }) => theme.colors.mainTextColor};
+  ${({ theme }) => theme.typography.h6.regular};
+`;
 
-  font-family: "Playfair Display", Arial, sans-serif;
-  font-size: 0.8em;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 25px;
-
-  &:focus {
-  }
-
-  transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+export const InputContainer = styled("div")`
+  display: flex;
+  border-radius: 12px;
+  border: 1px solid ${({ theme }) => theme.colors.inputBorder};
+  margin-bottom: 24px;
+  background-color: ${({ theme }) => theme.colors.inputBackground};
 `;

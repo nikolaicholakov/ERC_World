@@ -1,4 +1,4 @@
-import { number, object, string } from "yup";
+import { boolean, number, object, string } from "yup";
 
 export const helloSchema = object({
   userName: string().required("User Name field is required.")
@@ -18,4 +18,13 @@ export const auctionSellNftSchema = object({
   startData: number().required("Price is required"),
   duration: number().required("Price is required"),
   buyNowPrice: number().required("Price is required")
+});
+
+export const editProfileSchema = object({
+  profileImage: string().notRequired(),
+  backgroundImage: string().notRequired(),
+  email: string().notRequired(),
+  twoFactorAuth: boolean().notRequired(),
+  userName: string().notRequired(),
+  bio: string().notRequired()
 });

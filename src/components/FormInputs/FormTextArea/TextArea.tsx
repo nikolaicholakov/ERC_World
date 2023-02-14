@@ -22,10 +22,10 @@ export const FormTextArea = ({ name, control, label, ...props }: FormTextAreaPro
   });
 
   return (
-    <S.Container>
-      <S.InputWrapper>
-        {label && <S.Label htmlFor={name}>{label}</S.Label>}
-        <S.TextArea
+    <S.Label>
+      <S.LabelText>{label && label}</S.LabelText>
+      <S.InputContainer>
+        <S.Input
           {...props}
           spellCheck={false}
           onChange={onChange}
@@ -35,9 +35,9 @@ export const FormTextArea = ({ name, control, label, ...props }: FormTextAreaPro
           id={name}
           ref={ref}
         />
-      </S.InputWrapper>
+      </S.InputContainer>
       {error && <S.ErrorText>{error.message}</S.ErrorText>}
-    </S.Container>
+    </S.Label>
   );
 };
 

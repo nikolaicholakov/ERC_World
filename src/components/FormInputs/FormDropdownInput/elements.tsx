@@ -29,6 +29,6 @@ export const InputContainer = styled("div")`
   display: flex;
   border-radius: 12px;
   border: 1px solid ${({ theme }) => theme.colors.inputBorder};
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
   background-color: ${({ theme }) => theme.colors.inputBackground};
 `;

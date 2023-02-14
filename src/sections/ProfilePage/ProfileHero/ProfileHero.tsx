@@ -59,7 +59,9 @@ export const ProfileHero: React.FC<IProfileHeroProps> = ({ ...props }) => {
         </S.Row>
         <S.Row>
           <S.CreateNftButton>Create Nft</S.CreateNftButton>
-          <S.EditProfileButton>Edit Profile</S.EditProfileButton>
+          <S.EditProfileButton>
+            <S.Link href='/profile/edit-profile'>Edit Profile</S.Link>
+          </S.EditProfileButton>
           <S.OtherSettingsButton />
         </S.Row>
       </S.ProfileInformationContainer>

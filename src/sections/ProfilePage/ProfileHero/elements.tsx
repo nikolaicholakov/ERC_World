@@ -112,3 +112,5 @@ export const EditProfileButton = styled(CreateNftButton)`
 export const OtherSettingsButton = styled(OtherSettings)``;
 
 export const CheckFollowersPopup = styled(Followers)``;
+
+export const Link = styled("a")``;

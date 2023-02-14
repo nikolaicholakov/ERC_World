@@ -4,7 +4,7 @@ import _Image from "next/image";
 import "swiper/css";
 // import { UnderLinedButton } from "components/Buttons";
 
-export const Container = styled("a")`
+export const Container = styled("div")`
   max-width: 164px;
   display: flex;
   align-items: center;
@@ -21,6 +21,10 @@ export const Image = styled(_Image)`
   display: flex;
   background-color: ${({ theme }) => theme.colors.bodyBackground};
   border-radius: 50%;
+`;
+
+export const ImgContainer = styled("a")`
+  display: flex;
 `;
 
 export const TextContainer = styled("div")`

@@ -4,7 +4,7 @@ import * as S from "./elements";
 import "swiper/css";
 
 export interface IExploreCardProps extends IExploreNftCard {
-  ref?: RefObject<HTMLAnchorElement>;
+  ref?: RefObject<HTMLDivElement>;
 }
 
 export const ExploreCard: React.FC<IExploreCardProps> = ({
@@ -16,10 +16,12 @@ export const ExploreCard: React.FC<IExploreCardProps> = ({
   ...props
 }) => {
   return (
-    <S.Container href={"#"} {...props}>
+    <S.Container {...props}>
       <S.LikeButton />
       {/* <S.Image img={backgroundImage} objectFit='cover' /> */}
-      <S.Image {...image} objectFit='cover' />
+      <S.ImgContainer href={"#"}>
+        <S.Image {...image} objectFit='cover' />
+      </S.ImgContainer>
       <S.TextContainer>
         <S.CollectionName>{collectionName}</S.CollectionName>
         <S.Title>{nftName}</S.Title>

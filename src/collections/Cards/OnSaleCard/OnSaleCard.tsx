@@ -4,7 +4,7 @@ import * as S from "./elements";
 import "swiper/css";
 
 export interface IOnSaleCardProps extends IOnSaleCard {
-  ref?: RefObject<HTMLAnchorElement>;
+  ref?: RefObject<HTMLDivElement>;
 }
 
 export const OnSaleCard: React.FC<IOnSaleCardProps> = ({
@@ -15,10 +15,12 @@ export const OnSaleCard: React.FC<IOnSaleCardProps> = ({
   ...props
 }) => {
   return (
-    <S.Container href={"#"} {...props}>
+    <S.Container {...props}>
       <S.LikeButton />
       {/* <S.Image img={backgroundImage} objectFit='cover' /> */}
-      <S.Image {...image} objectFit='cover' />
+      <S.ImageContainer href={"#"}>
+        <S.Image {...image} objectFit='cover' />
+      </S.ImageContainer>
       <S.TextContainer>
         <S.CollectionName>{collectionName}</S.CollectionName>
         <S.Title>{nftName}</S.Title>

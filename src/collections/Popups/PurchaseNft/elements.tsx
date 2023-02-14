@@ -1,13 +1,8 @@
 import styled from "styled-components";
 import _Image from "next/image";
 
-import {
-  Button as _Button,
-  FontAwesomeIcon,
-  IconButton,
-  Popup as _Popup,
-  Typography
-} from "components";
+import { Button as _Button, Popup as _Popup, Typography } from "components";
+import { SuccessfulPurchase } from "collections/Forms";
 
 export const Image = styled(_Image)``;
 
@@ -34,14 +29,8 @@ export const NotSubmitedContainer = styled("div")`
   flex-direction: column;
 `;
 
-export const SubmitedContainer = styled("div")`
+export const PurchaseSubmited = styled(SuccessfulPurchase)`
   padding: 40px;
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 `;
 
 export const NftInfoContainer = styled("div")`
@@ -140,27 +129,4 @@ export const Span = styled("span")`
 export const CryptoBalance = styled("span")`
   color: ${({ theme }) => theme.colors.mainTextColor};
   ${({ theme }) => theme.typography.h6.regular};
-`;
-
-export const SuccessTitle = styled(Title)`
-  margin-bottom: 24px;
-`;
-
-export const Message = styled(Typography.H6)`
-  font-weight: 400;
-  margin-bottom: 8px;
-`;
-
-export const TransactionLinkContainer = styled("a")`
-  cursor: pointer;
-  ${({ theme }) => theme.typography.h6.regular};
-  color: ${({ theme }) => theme.colors.lightButtonColor};
-  margin-bottom: 40px;
-`;
-
-export const NewWindowIcon = styled(FontAwesomeIcon)`
-  margin-left: 6px;
-  display: inline-block;
-  font-size: 12px;
-  color: ${({ theme }) => theme.colors.lightButtonColor};
 `;

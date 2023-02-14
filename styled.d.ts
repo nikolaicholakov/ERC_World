@@ -23,6 +23,8 @@ declare module "styled-components" {
     | "scrollbarTrack"
     | "scrollbarThumb"
     | "bodyBackground"
+    | "inputBorder"
+    | "inputBackground"
     | "notificationBackground";
 
   type Gradients = "administratorGradiant" | "userGradient" | "trendingCollectionShadow";

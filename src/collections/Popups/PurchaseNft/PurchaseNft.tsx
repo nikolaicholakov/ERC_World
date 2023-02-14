@@ -1,4 +1,3 @@
-import { useWalletConnected } from "hooks";
 import React, { RefObject, useState } from "react";
 import { HTMLDivProps } from "types";
 import * as S from "./elements";
@@ -25,17 +24,7 @@ export const PurchaseNft: React.FC<IPurchaseNftProps> = ({
       <S.Popup popupOpened={popupOpened} togglePopup={togglePopup(false)} />
       <S.Container {...props}>
         {purchaseSubmited ? (
-          <S.SubmitedContainer>
-            <S.SuccessTitle>Purchase successful</S.SuccessTitle>
-            <S.Message>You successfully bought/sell NFT you can check your</S.Message>
-            <S.TransactionLinkContainer href={"https://polygonscan.com/"}>
-              transaction on Polyscan
-              <S.NewWindowIcon content='\f08e' font='--fa-font-solid' />
-            </S.TransactionLinkContainer>
-            <S.ButtonsContainer>
-              <S.Button onClick={togglePopup(false)}>Cancel</S.Button>
-            </S.ButtonsContainer>
-          </S.SubmitedContainer>
+          <S.PurchaseSubmited togglePopup={togglePopup} />
         ) : (
           <S.NotSubmitedContainer>
             <S.NftInfoContainer>

@@ -2,8 +2,9 @@ import { Typography, Button as _Button, LikeButton as _LikeButton, Button } from
 import styled, { css } from "styled-components";
 import _Image from "next/image";
 import "swiper/css";
+import { AuctionSellNft, SellNft } from "collections/Popups";
 
-export const Container = styled("a")`
+export const Container = styled("div")`
   max-width: 252px;
   display: flex;
   align-items: center;
@@ -16,7 +17,7 @@ export const Container = styled("a")`
   box-shadow: ${({ theme }) => theme.shadows.cardsShadow};
 `;
 
-export const ImageContainer = styled("div")`
+export const ImageContainer = styled("a")`
   display: flex;
   align-items: center;
   width: 100%;
@@ -76,3 +77,7 @@ export const AutctionSellButton = styled(SellButton)`
   border: 1px solid ${({ theme }) => theme.colors.buttonColor};
   margin: 0;
 `;
+
+export const SellNftPopup = styled(props => <SellNft {...props} />)``;
+
+export const AuctionSellNftPopup = styled(props => <AuctionSellNft {...props} />)``;

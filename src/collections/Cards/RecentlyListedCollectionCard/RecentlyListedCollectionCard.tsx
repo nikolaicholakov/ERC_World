@@ -5,7 +5,7 @@ import "swiper/css";
 
 export interface IRecentlyListedCollectionCardProps
   extends Omit<ITrendingCollectionsSwiperCard, "volume"> {
-  ref?: RefObject<HTMLAnchorElement>;
+  ref?: RefObject<HTMLDivElement>;
 }
 
 export const RecentlyListedCollectionCard: React.FC<IRecentlyListedCollectionCardProps> = ({
@@ -15,9 +15,11 @@ export const RecentlyListedCollectionCard: React.FC<IRecentlyListedCollectionCar
   ...props
 }) => {
   return (
-    <S.Container href={"#"} {...props}>
+    <S.Container {...props}>
       {/* <S.Image img={backgroundImage} objectFit='cover' /> */}
-      <S.Image {...image} objectFit='cover' />
+      <S.ImgContainer href={"#"}>
+        <S.Image {...image} objectFit='cover' />
+      </S.ImgContainer>
       <S.TextContainer>
         <S.Title>{name}</S.Title>
         <S.InfoContainer>

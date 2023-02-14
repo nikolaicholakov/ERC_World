@@ -1,15 +1,14 @@
-import { useWalletConnected } from "hooks";
 import React, { RefObject, useState } from "react";
 import { HTMLDivProps } from "types";
 import * as S from "./elements";
 
-interface IMakeAnOfferProps extends HTMLDivProps {
+interface IAuctionSellNftProps extends HTMLDivProps {
   popupOpened: boolean;
   togglePopup: (state: boolean) => () => void;
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const MakeAnOffer: React.FC<IMakeAnOfferProps> = ({
+export const AuctionSellNft: React.FC<IAuctionSellNftProps> = ({
   popupOpened,
   togglePopup,
   ...props
@@ -18,7 +17,7 @@ export const MakeAnOffer: React.FC<IMakeAnOfferProps> = ({
     <>
       <S.Popup popupOpened={popupOpened} togglePopup={togglePopup(false)} />
       <S.Container {...props}>
-        <S.Form popupOpened={popupOpened} togglePopup={togglePopup} />
+        <S.Form togglePopup={togglePopup} />
       </S.Container>
     </>
   );

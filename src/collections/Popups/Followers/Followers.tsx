@@ -50,12 +50,6 @@ export const exampleFollowers: IFollowerCard[] = [
 export const Followers: React.FC<IFollowersProps> = ({ popupOpened, togglePopup, ...props }) => {
   const { setWalletConnected } = useWalletConnected();
 
-  const connectWallet = () => {
-    togglePopup(false);
-    setWalletConnected(true);
-    document.body.style.overflow = "auto";
-  };
-
   return (
     <>
       <S.Popup popupOpened={popupOpened !== false} togglePopup={togglePopup(false)} />

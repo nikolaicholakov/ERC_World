@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import _Image from "next/image";
 import "swiper/css";
 
-export const Container = styled("a")`
+export const Container = styled("div")`
   max-width: 252px;
   display: flex;
   align-items: center;
@@ -20,6 +20,10 @@ export const Image = styled(_Image)`
   display: flex;
   background-color: ${({ theme }) => theme.colors.bodyBackground};
   border-radius: 8px;
+`;
+
+export const ImgContainer = styled("a")`
+  display: flex;
 `;
 
 export const TextContainer = styled("div")`

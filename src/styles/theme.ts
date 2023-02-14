@@ -19,7 +19,9 @@ export const theme: DefaultTheme = {
     bodyBackground: "#F9F9F9",
     tableRowBackground: "#FAFAFA",
     scrollbarTrack: "#71718626",
-    scrollbarThumb: "#2A2A3A33"
+    scrollbarThumb: "#2A2A3A33",
+    inputBorder: "#292D3F21",
+    inputBackground: "#292D3F08"
   },
   typography,
   gradients: {

@@ -3,7 +3,7 @@ import { useController, UseControllerProps, FieldValues } from "react-hook-form"
 import type { KeyOfType, HTMLInputProps } from "types";
 import * as S from "./elements";
 
-export interface FormInputProps<T extends FieldValues = any>
+export interface FormDropdownInputProps<T extends FieldValues = any>
   extends Omit<HTMLInputProps, "name" | "defaultValue">,
     Omit<UseControllerProps<T>, "name"> {
   name: KeyOfType<T>;
@@ -11,7 +11,7 @@ export interface FormInputProps<T extends FieldValues = any>
   ref?: ForwardedRef<HTMLInputElement>;
 }
 
-export const FormInput = ({ name, control, label, ...props }: FormInputProps) => {
+export const FormDropdownInput = ({ name, control, label, ...props }: FormDropdownInputProps) => {
   const {
     field: { onChange, onBlur, value, ref },
     fieldState: { invalid, isTouched, isDirty, error },
@@ -24,9 +24,9 @@ export const FormInput = ({ name, control, label, ...props }: FormInputProps) =>
   });
 
   return (
-    <S.Container {...props}>
-      <S.InputWrapper>
-        {label && <S.Label htmlFor={name}>{label}</S.Label>}
+    <S.Label>
+      <S.LabelText>{label && label}</S.LabelText>
+      <S.InputContainer>
         <S.Input
           {...props}
           spellCheck={false}
@@ -37,10 +37,10 @@ export const FormInput = ({ name, control, label, ...props }: FormInputProps) =>
           id={name}
           ref={ref}
         />
-      </S.InputWrapper>
+      </S.InputContainer>
       {error && <S.ErrorText>{error.message}</S.ErrorText>}
-    </S.Container>
+    </S.Label>
   );
 };
 
-FormInput.displayName = "FormInput";
+FormDropdownInput.displayName = "FormDropdownInput";

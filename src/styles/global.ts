@@ -27,6 +27,12 @@ export const GlobalStyles = createGlobalStyle`
         /* outline: 1px solid green; */
     } 
 
+    ::-webkit-input-placeholder,:-ms-input-placeholder ,::placeholder{ 
+        color: ${({ theme }) => theme.colors.secondaryTextColor};
+    }
+
+
+
     table,th,td{
         border:none;
     }

@@ -61,8 +61,13 @@ export const AuctionSellNftForm = ({ togglePopup, ...props }: AuctionSellNftForm
           label='Minimum step between auction bids'
           placeholder='Insert auction step value'
         />
-        <S.Input control={control} name='startData' label='Auction start date' />
-        <S.Input control={control} name='duration' label='Auction duration' />
+        <S.Input
+          control={control}
+          type='datetime-local'
+          name='startData'
+          label='Auction start date'
+        />
+        <S.SelectDurationInput control={control} name='duration' label='Auction duration' />
         <S.Input
           control={control}
           name='buyNowPrice'

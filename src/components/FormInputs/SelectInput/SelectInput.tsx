@@ -1,16 +1,16 @@
+import { ForwardedRef } from "react";
 import { useController, UseControllerProps, FieldValues } from "react-hook-form";
-import type { KeyOfType, HTMLTextAreaProps } from "types";
+import { KeyOfType } from "types";
 import * as S from "./elements";
 
-export interface FormTextAreaProps<T extends FieldValues = any>
-  extends Omit<HTMLTextAreaProps, "name" | "defaultValue">,
-    Omit<UseControllerProps<T>, "name"> {
+export interface ISelectInput<T extends FieldValues = any>
+  extends Omit<UseControllerProps<T>, "name"> {
   name: KeyOfType<T>;
-  required?: boolean;
   label?: string;
+  ref?: ForwardedRef<HTMLSelectElement>;
 }
 
-export const FormTextArea = ({ required, name, control, label, ...props }: FormTextAreaProps) => {
+export const SelectInput = ({ name, control, label, ...props }: ISelectInput) => {
   const {
     field: { onChange, onBlur, value, ref },
     fieldState: { invalid, isTouched, isDirty, error },
@@ -25,9 +25,8 @@ export const FormTextArea = ({ required, name, control, label, ...props }: FormT
   return (
     <S.Label>
       <S.LabelText>{label && label}</S.LabelText>
-      {required && <S.RequiredIcon content='\2a' font='--fa-font-solid' />}
       <S.InputContainer>
-        <S.Input
+        <S.Select
           {...props}
           spellCheck={false}
           onChange={onChange}
@@ -36,11 +35,16 @@ export const FormTextArea = ({ required, name, control, label, ...props }: FormT
           name={name}
           id={name}
           ref={ref}
-        />
+        >
+          <S.Option value=''>--Select Days--</S.Option>
+          <S.Option value='1'>1 Day</S.Option>
+          <S.Option value='3'>3 Days</S.Option>
+          <S.Option value='5'>5 Days</S.Option>
+          <S.Option value='7'>7 Days</S.Option>
+        </S.Select>
       </S.InputContainer>
-      {error && <S.ErrorText>{error.message}</S.ErrorText>}
     </S.Label>
   );
 };
 
-FormTextArea.displayName = "FormTextArea";
+SelectInput.displayName = "SelectInput";

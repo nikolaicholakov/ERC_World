@@ -48,7 +48,9 @@ export const Header = ({ ...props }: HeaderProps) => {
               <S.CartPopup togglePopup={toggleCartPopup} popupOpened={cartPopupOpened} />
             )}
             <S.LineSeparator />
-            <S.CreateNftButton>Create NFT</S.CreateNftButton>
+            <Link href={"/create-nft"}>
+              <S.CreateNftButton>Create NFT</S.CreateNftButton>
+            </Link>
             <S.WalletButton content='\f555' font='--fa-font-solid' />
             <Link href={"/profile/user_name"}>
               <S.ProfileButton content='\f007' font='--fa-font-regular' />

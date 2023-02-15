@@ -28,3 +28,14 @@ export const editProfileSchema = object({
   userName: string().notRequired(),
   bio: string().notRequired()
 });
+
+export const createNftSchema = object({
+  image: string().required(),
+  nftName: string().required(),
+  description: string().required(),
+  royalty: number().required(),
+  putOnMarket: boolean().required(),
+  price: number().notRequired(),
+  amountOfCopies: number().notRequired(),
+  amountToSell: number().notRequired()
+});

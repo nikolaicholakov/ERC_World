@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "components/FontAwesomeIcon";
 import { Typography } from "components/Typography";
 import styled from "styled-components";
 
@@ -20,7 +21,7 @@ export const Input = styled("input")`
   outline: none;
   padding: 14px;
   padding-left: 16px;
-  padding-right: 100px;
+  /* padding-right: 40px; */
   color: ${({ theme }) => theme.colors.mainTextColor};
   ${({ theme }) => theme.typography.h6.regular};
 `;
@@ -31,4 +32,13 @@ export const InputContainer = styled("div")`
   border: 1px solid ${({ theme }) => theme.colors.inputBorder};
   /* margin-bottom: 24px; */
   background-color: ${({ theme }) => theme.colors.inputBackground};
+`;
+
+export const RequiredIcon = styled(FontAwesomeIcon)`
+  margin-left: 3px;
+  pointer-events: none;
+  font-size: 8px;
+  display: inline;
+  top: -2px;
+  color: ${({ theme }) => theme.colors.required};
 `;

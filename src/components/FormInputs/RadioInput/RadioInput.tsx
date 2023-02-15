@@ -1,16 +1,17 @@
+import { ForwardedRef } from "react";
 import { useController, UseControllerProps, FieldValues } from "react-hook-form";
-import type { KeyOfType, HTMLTextAreaProps } from "types";
+import type { KeyOfType, HTMLInputProps } from "types";
 import * as S from "./elements";
 
-export interface FormTextAreaProps<T extends FieldValues = any>
-  extends Omit<HTMLTextAreaProps, "name" | "defaultValue">,
+export interface RadioInputProps<T extends FieldValues = any>
+  extends Omit<HTMLInputProps, "name" | "defaultValue">,
     Omit<UseControllerProps<T>, "name"> {
   name: KeyOfType<T>;
-  required?: boolean;
   label?: string;
+  ref?: ForwardedRef<HTMLInputElement>;
 }
 
-export const FormTextArea = ({ required, name, control, label, ...props }: FormTextAreaProps) => {
+export const RadioInput = ({ name, control, label, ...props }: RadioInputProps) => {
   const {
     field: { onChange, onBlur, value, ref },
     fieldState: { invalid, isTouched, isDirty, error },
@@ -18,17 +19,17 @@ export const FormTextArea = ({ required, name, control, label, ...props }: FormT
   } = useController({
     name,
     control,
-    rules: { required: true },
+    rules: { required: false },
     defaultValue: ""
   });
 
   return (
     <S.Label>
-      <S.LabelText>{label && label}</S.LabelText>
-      {required && <S.RequiredIcon content='\2a' font='--fa-font-solid' />}
       <S.InputContainer>
+        <S.Text>{label}</S.Text>
         <S.Input
           {...props}
+          type='radio'
           spellCheck={false}
           onChange={onChange}
           onBlur={onBlur}
@@ -38,9 +39,8 @@ export const FormTextArea = ({ required, name, control, label, ...props }: FormT
           ref={ref}
         />
       </S.InputContainer>
-      {error && <S.ErrorText>{error.message}</S.ErrorText>}
     </S.Label>
   );
 };
 
-FormTextArea.displayName = "FormTextArea";
+RadioInput.displayName = "RadioInput";

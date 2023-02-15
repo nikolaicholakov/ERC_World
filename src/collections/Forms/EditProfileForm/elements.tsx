@@ -6,7 +6,7 @@ import {
   FormDropdownInput as _FormInput,
   FormTextArea,
   FormTextArea as _FormTextArea,
-  Input,
+  UploadInput,
   Typography
 } from "components";
 
@@ -70,7 +70,7 @@ export const ProfileImageContainer = styled("div")`
   background-blend-mode: exclusion;
 `;
 
-export const UploadFileInput = styled(Input)``;
+export const UploadFileInput = styled(UploadInput)``;
 
 export const CopyWalletButton = styled(CopyBlockchainAdress)`
   /* padding + margin from ImageContainer Above */

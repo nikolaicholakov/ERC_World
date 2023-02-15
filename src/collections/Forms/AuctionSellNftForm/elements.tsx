@@ -4,6 +4,7 @@ import {
   FormDropdownInput,
   FormDropdownInput as _FormInput,
   FormTextArea as _FormTextArea,
+  SelectInput,
   Typography
 } from "components";
 
@@ -90,3 +91,5 @@ export const PriceInDollars = styled(Typography.H6)`
   color: ${({ theme }) => theme.colors.mainTextColor};
   text-align: left;
 `;
+
+export const SelectDurationInput = styled(SelectInput)``;

@@ -15,13 +15,15 @@ export const theme: DefaultTheme = {
     swiperInActive: "#03030329",
     sectionHeadersColor: "#292D3F",
     loadMoreButtonBackground: "#0B61E114",
+    required: "#C13737",
     notificationBackground: "#FF0000",
     bodyBackground: "#F9F9F9",
     tableRowBackground: "#FAFAFA",
     scrollbarTrack: "#71718626",
     scrollbarThumb: "#2A2A3A33",
     inputBorder: "#292D3F21",
-    inputBackground: "#292D3F08"
+    inputBackground: "#292D3F08",
+    previewBackground: "#C8C8C8"
   },
   typography,
   gradients: {

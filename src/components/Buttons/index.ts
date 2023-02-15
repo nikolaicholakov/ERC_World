@@ -5,4 +5,5 @@ export * from "./LoadMoreButton";
 export * from "./AddToCartButton";
 export * from "./CopyBlockchainAdress";
 export * from "./LikeButton";
+export * from "./CreateNewButton";
 export * from "./OtherSettings";

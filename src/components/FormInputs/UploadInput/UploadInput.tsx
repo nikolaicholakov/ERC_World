@@ -3,22 +3,15 @@ import { useController, UseControllerProps, FieldValues } from "react-hook-form"
 import type { KeyOfType, HTMLInputProps } from "types";
 import * as S from "./elements";
 
-export interface FormDropdownInputProps<T extends FieldValues = any>
+export interface UploadInputProps<T extends FieldValues = any>
   extends Omit<HTMLInputProps, "name" | "defaultValue">,
     Omit<UseControllerProps<T>, "name"> {
   name: KeyOfType<T>;
   label?: string;
-  required?: boolean;
   ref?: ForwardedRef<HTMLInputElement>;
 }
 
-export const FormDropdownInput = ({
-  name,
-  control,
-  label,
-  required,
-  ...props
-}: FormDropdownInputProps) => {
+export const UploadInput = ({ name, control, label, ...props }: UploadInputProps) => {
   const {
     field: { onChange, onBlur, value, ref },
     fieldState: { invalid, isTouched, isDirty, error },
@@ -33,24 +26,22 @@ export const FormDropdownInput = ({
   return (
     <S.Label>
       <S.LabelText>
-        {label && label}
-        {required && <S.RequiredIcon content='\2a' font='--fa-font-solid' />}
+        <S.Icon content='\f0ee' font='--fa-font-solid' />
+        Upload
       </S.LabelText>
-      <S.InputContainer {...props}>
-        <S.Input
-          {...props}
-          spellCheck={false}
-          onChange={onChange}
-          onBlur={onBlur}
-          value={value}
-          name={name}
-          id={name}
-          ref={ref}
-        />
-      </S.InputContainer>
-      {error && <S.ErrorText>{error.message}</S.ErrorText>}
+      <S.Input
+        {...props}
+        type='file'
+        spellCheck={false}
+        onChange={onChange}
+        onBlur={onBlur}
+        value={value}
+        name={name}
+        id={name}
+        ref={ref}
+      />
     </S.Label>
   );
 };
 
-FormDropdownInput.displayName = "FormDropdownInput";
+UploadInput.displayName = "UploadInput";

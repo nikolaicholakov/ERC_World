@@ -3,6 +3,7 @@ import {
   Button as _Button,
   FormDropdownInput,
   FormDropdownInput as _FormInput,
+  FormTextArea,
   FormTextArea as _FormTextArea,
   Typography
 } from "components";

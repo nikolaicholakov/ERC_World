@@ -3,7 +3,7 @@ import { useController, UseControllerProps, FieldValues } from "react-hook-form"
 import type { KeyOfType, HTMLInputProps } from "types";
 import * as S from "./elements";
 
-export interface InputProps<T extends FieldValues = any>
+export interface ToggleInputProps<T extends FieldValues = any>
   extends Omit<HTMLInputProps, "name" | "defaultValue">,
     Omit<UseControllerProps<T>, "name"> {
   name: KeyOfType<T>;
@@ -11,7 +11,7 @@ export interface InputProps<T extends FieldValues = any>
   ref?: ForwardedRef<HTMLInputElement>;
 }
 
-export const Input = ({ name, control, label, ...props }: InputProps) => {
+export const ToggleInput = ({ name, control, label, ...props }: ToggleInputProps) => {
   const {
     field: { onChange, onBlur, value, ref },
     fieldState: { invalid, isTouched, isDirty, error },
@@ -19,29 +19,23 @@ export const Input = ({ name, control, label, ...props }: InputProps) => {
   } = useController({
     name,
     control,
-    rules: { required: true },
+    rules: { required: false },
     defaultValue: ""
   });
 
   return (
-    <S.Label>
-      <S.LabelText>
-        <S.Icon content='\f0ee' font='--fa-font-solid' />
-        Upload
-      </S.LabelText>
-      <S.Input
-        {...props}
-        type='file'
-        spellCheck={false}
-        onChange={onChange}
-        onBlur={onBlur}
-        value={value}
-        name={name}
-        id={name}
-        ref={ref}
-      />
-    </S.Label>
+    <S.Input
+      {...props}
+      type='checkbox'
+      spellCheck={false}
+      onChange={onChange}
+      onBlur={onBlur}
+      value={value}
+      name={name}
+      id={name}
+      ref={ref}
+    />
   );
 };
 
-Input.displayName = "Input";
+ToggleInput.displayName = "ToggleInput";

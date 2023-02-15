@@ -1,16 +1,18 @@
+import { ForwardedRef } from "react";
 import { useController, UseControllerProps, FieldValues } from "react-hook-form";
-import type { KeyOfType, HTMLTextAreaProps } from "types";
+import type { KeyOfType, HTMLInputProps } from "types";
 import * as S from "./elements";
 
-export interface FormTextAreaProps<T extends FieldValues = any>
-  extends Omit<HTMLTextAreaProps, "name" | "defaultValue">,
+export interface RoyaltyInputProps<T extends FieldValues = any>
+  extends Omit<HTMLInputProps, "name" | "defaultValue">,
     Omit<UseControllerProps<T>, "name"> {
   name: KeyOfType<T>;
-  required?: boolean;
   label?: string;
+  required?: boolean;
+  ref?: ForwardedRef<HTMLInputElement>;
 }
 
-export const FormTextArea = ({ required, name, control, label, ...props }: FormTextAreaProps) => {
+export const RoyaltyInput = ({ name, control, label, required, ...props }: RoyaltyInputProps) => {
   const {
     field: { onChange, onBlur, value, ref },
     fieldState: { invalid, isTouched, isDirty, error },
@@ -24,9 +26,12 @@ export const FormTextArea = ({ required, name, control, label, ...props }: FormT
 
   return (
     <S.Label>
-      <S.LabelText>{label && label}</S.LabelText>
-      {required && <S.RequiredIcon content='\2a' font='--fa-font-solid' />}
-      <S.InputContainer>
+      <S.LabelText>
+        {label && label}
+        {required && <S.RequiredIcon content='\2a' font='--fa-font-solid' />}
+        <S.RoyaltyInfo content='\f05a' font='--fa-font-solid' />
+      </S.LabelText>
+      <S.InputContainer {...props}>
         <S.Input
           {...props}
           spellCheck={false}
@@ -37,10 +42,11 @@ export const FormTextArea = ({ required, name, control, label, ...props }: FormT
           id={name}
           ref={ref}
         />
+        <S.PercentIcon>%</S.PercentIcon>
       </S.InputContainer>
       {error && <S.ErrorText>{error.message}</S.ErrorText>}
     </S.Label>
   );
 };
 
-FormTextArea.displayName = "FormTextArea";
+RoyaltyInput.displayName = "RoyaltyInput";

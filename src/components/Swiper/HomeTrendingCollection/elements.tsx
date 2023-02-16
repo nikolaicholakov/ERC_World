@@ -15,6 +15,10 @@ export const Container = styled("a")`
 
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: ${({ theme }) => theme.shadows.cardsShadow};
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    padding: 10px;
+  }
 `;
 
 export const Image = styled(_Image)`
@@ -26,6 +30,7 @@ export const Image = styled(_Image)`
 
 export const TextContainer = styled("div")`
   display: flex;
+  width: 100%;
   flex-direction: column;
   margin-top: 16px;
   pointer-events: none;
@@ -35,6 +40,7 @@ export const Title = styled("span")`
   ${({ theme }) => theme.typography.h5.regular};
   font-weight: 600;
   margin-bottom: 16px;
+  text-align: center;
 `;
 
 export const InfoContainer = styled("div")`

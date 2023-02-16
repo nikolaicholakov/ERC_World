@@ -69,11 +69,14 @@ export const Explore: React.FC<IExploreProps> = ({ ...props }) => {
   return (
     <S.Container {...props}>
       <S.SectionHeading>Explore</S.SectionHeading>
-      <S.CardsContainer>
-        {cards.map((card, i) => (
-          <S.ExploreCard key={"exploreCard" + i} {...card} />
-        ))}
-      </S.CardsContainer>
+      <S.Wrapper>
+        <S.CardsContainer>
+          {cards.map((card, i) => (
+            <S.ExploreCard key={"exploreCard" + i} {...card} />
+          ))}
+          <S.LoadMoreCard />
+        </S.CardsContainer>
+      </S.Wrapper>
       <S.LoadMore />
     </S.Container>
   );

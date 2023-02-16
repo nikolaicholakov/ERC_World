@@ -24,9 +24,14 @@ export const HistoryTableHeaderRow = styled(TableRow)`
 `;
 
 export const HistoryTableHeadColumn = styled(TableHeadColumn)`
-  &:nth-of-type(3),
   &:nth-of-type(5) {
     text-align: right;
+  }
+`;
+
+export const DateTableHeadColumn = styled(HistoryTableHeadColumn)`
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    display: none;
   }
 `;
 
@@ -46,10 +51,21 @@ export const HistoryTableData = styled(TableData)`
     border-bottom-right-radius: 4px;
   }
 
-  &:nth-of-type(3),
   &:nth-of-type(5) {
     text-align: right;
   }
 `;
 
+export const DateTableData = styled(HistoryTableData)`
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    display: none;
+  }
+`;
+
 export const User = styled(TableUser)``;
+
+export const Span = styled.span`
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    display: none;
+  }
+`;

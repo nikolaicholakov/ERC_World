@@ -13,11 +13,20 @@ export const FooterContainer = styled("div")`
   padding: 40px;
   margin: 0 auto;
   justify-content: space-between;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    flex-direction: column-reverse;
+    padding: 30px;
+  }
 `;
 
 export const LogoContainer = styled("div")`
   display: flex;
   flex-direction: column;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    width: 100%;
+  }
 `;
 
 export const Logo = styled(_Logo)`
@@ -36,16 +45,28 @@ export const LogoText = styled(Typography.H6)`
 
 export const LinksContainer = styled("div")`
   display: flex;
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
 `;
 
 export const LinksList = styled("ul")`
   &:first-of-type {
     margin-right: 100px;
+
+    @media ${({ theme }) => theme.breakpoint.max.M} {
+      margin-right: 0px;
+    }
   }
 `;
 
 export const SocialsList = styled("ul")`
   display: flex;
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    flex-direction: column;
+  }
 `;
 
 export const ListItem = styled("li")`
@@ -55,6 +76,14 @@ export const ListItem = styled("li")`
 
   &:last-of-type {
     margin-bottom: 0px;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    padding: 10px;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding: 6px;
   }
 `;
 
@@ -69,6 +98,14 @@ export const TokenLink = styled(Link)`
 
 export const Icon = styled(FontAwesomeIcon)`
   font-size: 20px;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    font-size: 16px;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    font-size: 14px;
+  }
 `;
 
 export const IconListItem = styled(ListItem)`

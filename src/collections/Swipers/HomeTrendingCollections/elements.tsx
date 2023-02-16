@@ -16,6 +16,17 @@ export const Swiper = styled(_Swiper)`
 
   .swiper-slide {
     max-width: 176px;
+    margin-right: 24px;
+
+    @media ${({ theme }) => theme.breakpoint.max.M} {
+      max-width: 160px;
+      margin-right: 15px;
+    }
+
+    @media ${({ theme }) => theme.breakpoint.max.S} {
+      max-width: 140px;
+      margin-right: 10px;
+    }
   }
 
   .swiper-pagination-progressbar {
@@ -36,7 +47,7 @@ export const Shadow = styled("div")`
   position: absolute;
   height: 100%;
   width: 53px;
-  right: -3px;
+  right: -1px;
   top: 0;
   z-index: 100;
 

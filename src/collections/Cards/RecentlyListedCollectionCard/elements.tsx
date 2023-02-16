@@ -37,6 +37,7 @@ export const TextContainer = styled("div")`
 export const Title = styled("span")`
   ${({ theme }) => theme.typography.h4.regular};
   margin-bottom: 16px;
+  text-align: center;
 `;
 
 export const InfoContainer = styled("div")`

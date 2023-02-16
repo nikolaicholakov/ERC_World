@@ -10,4 +10,8 @@ export const TableHeadColumn = styled("th")`
   padding: 16px 24px;
 
   text-align: left;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    padding: 10px 18px;
+  }
 `;

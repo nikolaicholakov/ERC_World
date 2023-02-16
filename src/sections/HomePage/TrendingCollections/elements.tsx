@@ -8,6 +8,16 @@ export const Container = styled(Section)`
   padding-bottom: 40px;
   display: flex;
   flex-direction: column;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
 `;
 
 export const Swiper = styled(HomeTrendingCollectionsSwiper)`

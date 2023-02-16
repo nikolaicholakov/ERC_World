@@ -25,6 +25,15 @@ export const Container = styled("div")`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    margin: auto;
+    width: 90%;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding: 24px 20px;
+  }
 `;
 
 export const Form = styled(MakeAnOfferForm)``;

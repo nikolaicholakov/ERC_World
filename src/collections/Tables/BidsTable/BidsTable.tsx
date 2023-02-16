@@ -22,7 +22,9 @@ export const BidsTable: React.FC<IBidsTableProps> = ({ tableData, ...props }) =>
         <>
           <S.HistoryTableRow key={"bidsRow" + i}>
             <S.HistoryTableData>
-              <S.User img={row.userImg}>{row.userName}</S.User>
+              <S.User img={row.userImg}>
+                <S.Span>{row.userName}</S.Span>
+              </S.User>
             </S.HistoryTableData>
             <S.HistoryTableData>{row.type}</S.HistoryTableData>
             <S.HistoryTableData>{row.date}</S.HistoryTableData>

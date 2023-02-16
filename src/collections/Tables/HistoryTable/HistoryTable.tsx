@@ -14,7 +14,7 @@ export const HistoryTable: React.FC<IHistoryTableProps> = ({ tableData, ...props
         <S.HistoryTableHeadColumn>From</S.HistoryTableHeadColumn>
         <S.HistoryTableHeadColumn>To</S.HistoryTableHeadColumn>
         <S.HistoryTableHeadColumn>Type</S.HistoryTableHeadColumn>
-        <S.HistoryTableHeadColumn>Date</S.HistoryTableHeadColumn>
+        <S.DateTableHeadColumn>Date</S.DateTableHeadColumn>
         <S.HistoryTableHeadColumn>Price</S.HistoryTableHeadColumn>
       </S.HistoryTableHeaderRow>
     </S.HistoryTableHead>
@@ -23,13 +23,17 @@ export const HistoryTable: React.FC<IHistoryTableProps> = ({ tableData, ...props
         <>
           <S.HistoryTableRow key={"historyRow" + i}>
             <S.HistoryTableData>
-              <S.User img={row.sellerImg}>{row.sellerName}</S.User>
+              <S.User img={row.sellerImg}>
+                <S.Span>{row.sellerName}</S.Span>
+              </S.User>
             </S.HistoryTableData>
             <S.HistoryTableData>
-              <S.User img={row.buyerImg}>{row.buyerName}</S.User>
+              <S.User img={row.buyerImg}>
+                <S.Span>{row.buyerName}</S.Span>
+              </S.User>
             </S.HistoryTableData>
             <S.HistoryTableData>{row.type}</S.HistoryTableData>
-            <S.HistoryTableData>{row.date}</S.HistoryTableData>
+            <S.DateTableData>{row.date}</S.DateTableData>
             <S.HistoryTableData>{row.price} MATIC</S.HistoryTableData>
           </S.HistoryTableRow>
           <S.SpacingRow key={"historySpacingRow" + i} />

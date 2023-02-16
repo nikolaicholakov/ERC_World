@@ -73,12 +73,15 @@ export const RecentlyListedCollections: React.FC<ITrendingCollectionsProps> = ({
   return (
     <S.Container {...props}>
       <S.SectionHeading>Recently Listed Collections</S.SectionHeading>
-      <S.CardsContainer>
-        {swiperCards.map((card, i) => (
-          <S.CollectionCard key={"recentlyListedCollection" + i} {...card} />
-        ))}
-      </S.CardsContainer>
-      <S.LoadMore />
+      <S.Wrapper>
+        <S.CardsContainer>
+          {swiperCards.map((card, i) => (
+            <S.CollectionCard key={"recentlyListedCollection" + i} {...card} />
+          ))}
+          <S.LoadMoreCard />
+        </S.CardsContainer>
+        <S.LoadMore />
+      </S.Wrapper>
     </S.Container>
   );
 };

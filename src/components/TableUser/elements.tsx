@@ -16,6 +16,12 @@ export const ImgWrapper = styled("div")`
   overflow: hidden;
 
   margin-right: 16px;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    margin: 0;
+    width: 36px;
+    height: 36px;
+  }
 `;
 
 export const Name = styled("span")`

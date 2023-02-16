@@ -42,3 +42,9 @@ export const HistoryTableData = styled(TableData)`
 `;
 
 export const User = styled(TableUser)``;
+
+export const Span = styled.span`
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    display: none;
+  }
+`;

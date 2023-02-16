@@ -67,7 +67,7 @@ export const SalesHero: React.FC<ISalesHeroProps> = ({ ...props }) => {
     <S.Container {...props}>
       <S.HeroContent>
         <S.ImgWrapper>
-          <S.Image src={"/imgs/nft1.png"} layout='fill' />
+          <S.Image src={"/imgs/nft1.png"} layout='fill' objectFit='cover' />
         </S.ImgWrapper>
         <S.SaleInfo saleBy={saleBy} />
       </S.HeroContent>

@@ -25,6 +25,11 @@ export const Container = styled("div")`
   padding-top: 24px;
   padding-inline: 40px;
   padding-bottom: 31px;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    margin: auto;
+    max-width: 90%;
+  }
 `;
 
 export const TextContainer = styled("div")`
@@ -54,5 +59,9 @@ export const Button = styled(_Button)`
 
   &:first-of-type {
     margin-right: 20px;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    width: 120px;
   }
 `;

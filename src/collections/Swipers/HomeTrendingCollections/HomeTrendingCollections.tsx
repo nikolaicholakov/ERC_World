@@ -24,7 +24,6 @@ export const HomeTrendingCollectionsSwiper: React.FC<IHomeTrendingCollectionsSwi
     loop: true,
     speed: 800,
     slidesPerView: "auto",
-    spaceBetween: 24,
     pagination: {
       type: "progressbar"
     },

@@ -19,8 +19,10 @@ export const theme: DefaultTheme = {
     notificationBackground: "#FF0000",
     bodyBackground: "#F9F9F9",
     tableRowBackground: "#FAFAFA",
-    scrollbarTrack: "#71718626",
-    scrollbarThumb: "#2A2A3A33",
+    // scrollbarTrack: "#71718626",
+    scrollbarTrack: "#03030329",
+    // scrollbarThumb: "#2A2A3A33",
+    scrollbarThumb: "#4A5055",
     inputBorder: "#292D3F21",
     inputBackground: "#292D3F08",
     previewBackground: "#C8C8C8"

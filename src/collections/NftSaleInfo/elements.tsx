@@ -25,6 +25,10 @@ export const InfoContainer = styled("div")`
   background-color: ${({ theme }) => theme.colors.white};
 
   box-shadow: ${({ theme }) => theme.shadows.cardsShadow};
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding: 15px;
+  }
 `;
 
 export const Row = styled("div")`
@@ -89,6 +93,10 @@ export const AvailableNumber = styled("div")`
 
 export const Creator = styled(NftCreatorOrCollection)`
   margin-right: 58px;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    margin-right: 20px;
+  }
 `;
 
 export const Collection = styled(NftCreatorOrCollection)``;
@@ -103,6 +111,11 @@ export const Description = styled(Typography.H6)`
   color: ${({ theme }) => theme.colors.mainTextColor};
   max-width: 566px;
   margin-bottom: 24px;
+  align-self: flex-start;
+
+  @media ${({ theme }) => theme.breakpoint.max.L} {
+    max-width: 100%;
+  }
 `;
 
 export const Wrapper = styled("div")`
@@ -128,9 +141,18 @@ export const RegularText = styled(Typography.H6)`
 export const LastRow = styled(Row)`
   justify-content: space-between;
   flex-direction: row;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
-export const SellerInfo = styled(NftSeller)``;
+export const SellerInfo = styled(NftSeller)`
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    margin-bottom: 16px;
+  }
+`;
 
 export const ActionsContainer = styled("div")`
   display: flex;
@@ -145,6 +167,10 @@ export const AddToCart = styled(AddToCartButton)`
 export const BuyButton = styled(Button)<{ saleBy: "user" | "administrator" }>`
   display: flex;
   order: 2;
+  width: 125px;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
 
   ${({ theme, saleBy }) =>
     saleBy === "user"
@@ -159,14 +185,18 @@ export const BuyButton = styled(Button)<{ saleBy: "user" | "administrator" }>`
           background-color: ${({ theme }) => theme.colors.buttonColor};
         `}
   border-radius: 4px;
-  padding: 10px 33px;
+  padding: 0;
 `;
 
 export const MakeOfferButton = styled(Button)`
   margin-left: 16px;
   border-radius: 4px;
   background-color: ${({ theme }) => theme.colors.buttonColor};
-  padding: 10px 13px;
+  padding: 0;
+  width: 125px;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
 
   display: flex;
   order: 3;

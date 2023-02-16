@@ -9,7 +9,9 @@ import {
 import _Image from "next/image";
 import { SuccessfulPurchase } from "../SuccessfulPurchase";
 
-export const Form = styled("form")``;
+export const Form = styled("form")`
+  width: 100%;
+`;
 
 export const Image = styled(_Image)``;
 
@@ -116,26 +118,22 @@ export const Button = styled(_Button)`
   border-radius: 4px;
   border: 1px solid ${({ theme }) => theme.colors.secondaryTextColor};
   color: ${({ theme }) => theme.colors.mainTextColor};
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    width: 30%;
+  }
 `;
 
-export const BuyNowButton = styled(_Button)`
-  width: 120px;
-  height: 40px;
-  padding: 0px;
-  border-radius: 4px;
+export const BuyNowButton = styled(Button)`
   margin-left: 20px;
 
   color: ${({ theme }) => theme.colors.buttonColor};
   border: 1px solid ${({ theme }) => theme.colors.buttonColor};
 `;
 
-export const MakeBidButton = styled(_Button)`
-  width: 120px;
-  height: 40px;
-  padding: 0px;
-  border-radius: 4px;
+export const MakeBidButton = styled(Button)`
   margin-left: 20px;
-
+  border: 1px solid transparent;
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.lightButtonColor};
 `;

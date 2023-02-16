@@ -17,6 +17,11 @@ export const Container = styled("div")`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    margin: auto;
+    max-width: 90%;
+  }
 `;
 
 export const NotSubmitedContainer = styled("div")`
@@ -27,6 +32,10 @@ export const NotSubmitedContainer = styled("div")`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    padding: 24px 20px;
+  }
 `;
 
 export const PurchaseSubmited = styled(SuccessfulPurchase)`

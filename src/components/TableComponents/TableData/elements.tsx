@@ -7,4 +7,8 @@ export const TableData = styled("td")`
   padding: 28px 24px;
   text-transform: capitalize;
   ${({ theme }) => theme.typography.h6.regular};
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    padding: 14px 18px;
+  }
 `;

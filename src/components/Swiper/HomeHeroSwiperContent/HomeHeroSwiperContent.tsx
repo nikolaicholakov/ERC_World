@@ -16,7 +16,7 @@ export const HomeHeroSwiperContent: React.FC<IHomeHeroSwiperContentProps> = ({
   return (
     <S.Container {...props}>
       {/* <S.Image img={backgroundImage} objectFit='cover' /> */}
-      <S.Image {...image} objectFit='cover' />
+      <S.Image {...image} layout='fill' objectFit='cover' />
       <S.TextContainer>
         <S.Title>{title}</S.Title>
         <S.SubTitle>{subTitle}</S.SubTitle>

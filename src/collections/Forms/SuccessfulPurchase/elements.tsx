@@ -9,6 +9,10 @@ export const SubmitedContainer = styled("div")`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    padding-block: 0px;
+  }
 `;
 export const SuccessTitle = styled(Typography.H4)`
   margin-bottom: 24px;
@@ -24,6 +28,10 @@ export const TransactionLinkContainer = styled("a")`
   ${({ theme }) => theme.typography.h6.regular};
   color: ${({ theme }) => theme.colors.lightButtonColor};
   margin-bottom: 40px;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    margin-bottom: 20px;
+  }
 `;
 export const NewWindowIcon = styled(FontAwesomeIcon)`
   margin-left: 6px;

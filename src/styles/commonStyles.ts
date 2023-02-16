@@ -1,21 +1,21 @@
 import { css, FlattenSimpleInterpolation } from "styled-components";
 
 export interface TypographyStylesProps {
-  h1: { regular: FlattenSimpleInterpolation };
-  h2: { regular: FlattenSimpleInterpolation };
-  h3: { regular: FlattenSimpleInterpolation };
-  h4: { regular: FlattenSimpleInterpolation };
-  h5: { regular: FlattenSimpleInterpolation };
-  h6: { regular: FlattenSimpleInterpolation };
-  h7: { regular: FlattenSimpleInterpolation };
+  h1: { regular: any };
+  h2: { regular: any };
+  h3: { regular: any };
+  h4: { regular: any };
+  h5: { regular: any };
+  h6: { regular: any };
+  h7: { regular: any };
   p: {
-    regular: FlattenSimpleInterpolation;
+    regular: any;
   };
   loadMoreButtonText: {
-    regular: FlattenSimpleInterpolation;
+    regular: any;
   };
   userName: {
-    regular: FlattenSimpleInterpolation;
+    regular: any;
   };
 }
 
@@ -26,6 +26,18 @@ export const typography: TypographyStylesProps = {
       font-size: 48px;
       font-weight: 600;
       line-height: 1.17;
+
+      @media ${({ theme }) => theme.breakpoint.max.L} {
+        font-size: 40px;
+      }
+
+      @media ${({ theme }) => theme.breakpoint.max.M} {
+        font-size: 30px;
+      }
+
+      @media ${({ theme }) => theme.breakpoint.max.S} {
+        font-size: 22px;
+      }
     `
   },
   h2: {
@@ -34,6 +46,18 @@ export const typography: TypographyStylesProps = {
       font-size: 32px;
       font-weight: 600;
       line-height: 1.18;
+
+      @media ${({ theme }) => theme.breakpoint.max.L} {
+        font-size: 30px;
+      }
+
+      @media ${({ theme }) => theme.breakpoint.max.M} {
+        font-size: 28px;
+      }
+
+      @media ${({ theme }) => theme.breakpoint.max.S} {
+        font-size: 24px;
+      }
     `
   },
   h3: {
@@ -42,6 +66,18 @@ export const typography: TypographyStylesProps = {
       font-size: 24px;
       font-weight: 600;
       line-height: 1.17;
+
+      @media ${({ theme }) => theme.breakpoint.max.L} {
+        font-size: 22px;
+      }
+
+      @media ${({ theme }) => theme.breakpoint.max.M} {
+        font-size: 20px;
+      }
+
+      @media ${({ theme }) => theme.breakpoint.max.S} {
+        font-size: 18px;
+      }
     `
   },
   h4: {
@@ -50,6 +86,18 @@ export const typography: TypographyStylesProps = {
       font-size: 18px;
       font-weight: 600;
       line-height: 1.17;
+
+      @media ${({ theme }) => theme.breakpoint.max.L} {
+        font-size: 16px;
+      }
+
+      @media ${({ theme }) => theme.breakpoint.max.M} {
+        font-size: 15px;
+      }
+
+      @media ${({ theme }) => theme.breakpoint.max.S} {
+        font-size: 14px;
+      }
     `
   },
   h5: {
@@ -58,6 +106,18 @@ export const typography: TypographyStylesProps = {
       font-size: 16px;
       font-weight: 700;
       line-height: 1.19;
+
+      @media ${({ theme }) => theme.breakpoint.max.L} {
+        font-size: 15px;
+      }
+
+      @media ${({ theme }) => theme.breakpoint.max.M} {
+        font-size: 12px;
+      }
+
+      @media ${({ theme }) => theme.breakpoint.max.S} {
+        font-size: 11px;
+      }
     `
   },
   h6: {
@@ -66,6 +126,18 @@ export const typography: TypographyStylesProps = {
       font-size: 14px;
       font-weight: 500;
       line-height: 1.43;
+
+      @media ${({ theme }) => theme.breakpoint.max.L} {
+        font-size: 13px;
+      }
+
+      @media ${({ theme }) => theme.breakpoint.max.M} {
+        font-size: 11px;
+      }
+
+      @media ${({ theme }) => theme.breakpoint.max.S} {
+        font-size: 10px;
+      }
     `
   },
   h7: {
@@ -74,6 +146,18 @@ export const typography: TypographyStylesProps = {
       font-size: 12px;
       font-weight: 400;
       line-height: 1.17;
+
+      @media ${({ theme }) => theme.breakpoint.max.L} {
+        font-size: 11px;
+      }
+
+      @media ${({ theme }) => theme.breakpoint.max.M} {
+        font-size: 10px;
+      }
+
+      @media ${({ theme }) => theme.breakpoint.max.S} {
+        font-size: 10px;
+      }
     `
   },
   p: {
@@ -87,6 +171,18 @@ export const typography: TypographyStylesProps = {
       line-height: 28px;
       letter-spacing: 0px;
       text-align: center;
+
+      @media ${({ theme }) => theme.breakpoint.max.L} {
+        font-size: 16px;
+      }
+
+      @media ${({ theme }) => theme.breakpoint.max.M} {
+        font-size: 15px;
+      }
+
+      @media ${({ theme }) => theme.breakpoint.max.S} {
+        font-size: 14px;
+      }
     `
   },
   userName: {
@@ -97,6 +193,18 @@ export const typography: TypographyStylesProps = {
       line-height: 28px;
       letter-spacing: 0px;
       text-align: center;
+
+      @media ${({ theme }) => theme.breakpoint.max.L} {
+        font-size: 18px;
+      }
+
+      @media ${({ theme }) => theme.breakpoint.max.M} {
+        font-size: 17px;
+      }
+
+      @media ${({ theme }) => theme.breakpoint.max.S} {
+        font-size: 15px;
+      }
     `
   }
 };

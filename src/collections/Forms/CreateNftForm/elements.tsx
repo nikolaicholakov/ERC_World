@@ -23,11 +23,19 @@ export const Form = styled("form")`
   flex-direction: column;
   align-items: flex-start;
   box-shadow: ${({ theme }) => theme.shadows.cardsShadow};
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding: 20px;
+  }
 `;
 
 export const Container = styled("div")`
   display: flex;
   width: 100%;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    flex-direction: column;
+  }
 `;
 
 export const ButtonsContainer = styled("div")`
@@ -51,12 +59,22 @@ export const CreateNftSection = styled("div")`
   align-items: center;
   flex-basis: 62.5%;
   margin-right: 88px;
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    flex-basis: unset;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 `;
 
 export const PreviewSection = styled("div")`
   display: flex;
   flex-direction: column;
   flex-basis: 37.5%;
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    flex-basis: unset;
+    width: 100%;
+  }
 `;
 
 export const PreviewNft = styled(PreviewCard)``;

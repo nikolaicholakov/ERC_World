@@ -15,12 +15,22 @@ export const Container = styled("div")`
 
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: ${({ theme }) => theme.shadows.cardsShadow};
+
+  @media ${({ theme }) => theme.breakpoint.max.L} {
+    max-width: 100%;
+  }
 `;
 
 export const ImageContainer = styled("a")`
   display: flex;
   align-items: center;
   width: 100%;
+  padding-top: 100%;
+
+  @media ${({ theme }) => theme.breakpoint.max.L} {
+    height: 100%;
+    padding-top: 100%;
+  }
 `;
 
 export const Image = styled(_Image)`
@@ -52,6 +62,13 @@ export const ButtonsContainer = styled("div")`
   display: flex;
   justify-content: center;
   width: 100%;
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    justify-content: space-between;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    flex-direction: column;
+  }
 `;
 
 export const LikeButton = styled(_LikeButton)`
@@ -68,6 +85,12 @@ export const SellButton = styled(Button)`
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.buttonColor};
   margin-right: 8px;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    margin: 0;
+    margin-bottom: 10px;
+    flex-basis: unset;
+  }
 `;
 
 export const AutctionSellButton = styled(SellButton)`
@@ -76,6 +99,10 @@ export const AutctionSellButton = styled(SellButton)`
   background-color: transparent;
   border: 1px solid ${({ theme }) => theme.colors.buttonColor};
   margin: 0;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    flex-basis: unset;
+  }
 `;
 
 export const SellNftPopup = styled(props => <SellNft {...props} />)``;

@@ -14,6 +14,10 @@ export const Container = styled("div")`
 
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: ${({ theme }) => theme.shadows.cardsShadow};
+
+  @media ${({ theme }) => theme.breakpoint.max.L} {
+    max-width: 100%;
+  }
 `;
 
 export const Image = styled(_Image)`
@@ -24,6 +28,14 @@ export const Image = styled(_Image)`
 
 export const ImageContainer = styled("a")`
   display: flex;
+  align-items: center;
+  width: 100%;
+  padding-top: 100%;
+
+  @media ${({ theme }) => theme.breakpoint.max.L} {
+    height: 100%;
+    padding-top: 100%;
+  }
 `;
 
 export const TextContainer = styled("div")`

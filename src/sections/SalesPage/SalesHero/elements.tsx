@@ -120,6 +120,11 @@ export const BidsContainer = styled(SalesHistoryContainer)`
   box-shadow: ${({ theme }) => theme.shadows.cardsShadow};
 
   margin-bottom: 40px;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    padding: 18px 12px;
+    margin-bottom: 25px;
+  }
 `;
 
 export const BidsTable = styled(_BidsTable)``;

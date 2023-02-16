@@ -22,11 +22,17 @@ export const Container = styled("div")`
   justify-content: center;
   flex-direction: column;
 
-  // not the correct one
   padding: 30px;
   padding-left: 16px;
   // to account for the padding so that the scrollbar can be well visible
   padding-right: calc(32px - 6px);
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+    padding-block: 20px;
+  }
 `;
 
 export const Title = styled(Typography.H4)`
@@ -43,6 +49,10 @@ export const CartItemsContainer = styled("div")`
   overflow: auto;
 
   padding-right: 6px;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    margin-bottom: 20px;
+  }
 `;
 
 export const PriceContainer = styled("div")`
@@ -53,6 +63,10 @@ export const PriceContainer = styled("div")`
   margin-bottom: 32px;
   padding-left: 24px;
   width: 100%;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    margin-bottom: 10px;
+  }
 `;
 
 export const PriceContainerRow = styled("div")`

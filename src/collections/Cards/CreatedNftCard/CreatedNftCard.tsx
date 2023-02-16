@@ -31,7 +31,7 @@ export const CreatedNftCard: React.FC<ICreatedNftCardProps> = ({
       <S.LikeButton />
       {/* <S.Image img={backgroundImage} objectFit='cover' /> */}
       <S.ImageContainer href={"#"}>
-        <S.Image {...image} objectFit='cover' />
+        <S.Image {...image} layout='fill' objectFit='cover' />
       </S.ImageContainer>
       <S.TextContainer>
         <S.CollectionName>{collectionName}</S.CollectionName>

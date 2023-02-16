@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 import _Image from "next/image";
 import { Section, Typography } from "components";
-import { OnSaleCard } from "collections";
 
 export const Image = styled(_Image)``;
 
@@ -16,15 +15,56 @@ export const TypesContainer = styled("div")`
   display: flex;
   width: 100%;
   padding-bottom: 12px;
-  border-bottom: 3px solid ${({ theme }) => theme.colors.buttonColor}1f;
   margin-bottom: 60px;
+  max-width: 100%;
+
+  /* background-color: ${({ theme }) => theme.colors.buttonColor}1f; */
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    overflow-x: auto;
+    margin-bottom: 40px;
+    max-width: 100%;
+    padding-top: 2px;
+    padding-bottom: 15px;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    margin-bottom: 20px;
+  }
+`;
+
+export const Text = styled("span")`
+  display: inline-block;
 `;
 
 export const Type = styled(Typography.H4)<{ active: boolean }>`
   font-weight: 500;
   flex-basis: calc(100% / 7);
+  width: 100%;
+  justify-content: center;
   color: ${({ theme }) => theme.colors.mainTextColor}80;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding-inline: 5px;
+  @media ${({ theme }) => theme.breakpoint.max.L} {
+    /* margin-right: 10px; */
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    flex-basis: calc(100% / 5);
+    flex-direction: column-reverse;
+    flex-shrink: 0;
+    justify-content: flex-start;
+  }
 
   text-align: center;
   &:first-of-type {
@@ -35,13 +75,25 @@ export const Type = styled(Typography.H4)<{ active: boolean }>`
     text-align: right;
   }
 
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 10px;
+    background-color: ${({ theme }) => theme.colors.buttonColor}1f;
+  }
+
   &::after {
     content: "";
     position: absolute;
-    bottom: -12px;
+    bottom: -14px;
     left: 0;
     width: 100%;
-    height: 3px;
+    height: 2px;
+    border-radius: 10px;
   }
 
   ${({ active }) =>
@@ -62,6 +114,11 @@ export const NumberSpan = styled("span")`
   ${({ theme }) => theme.typography.h6.regular}
   font-weight:500;
   color: ${({ theme }) => theme.colors.mainTextColor};
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    margin-left: 0;
+    margin-bottom: 5px;
+  }
 `;
 
 export const NftCardsContainer = styled("div")`
@@ -86,12 +143,34 @@ export const NftsContainer = styled("div")`
   width: 100%;
 
   > * {
-    flex: 1 1 25%;
+    flex-basis: 25%;
     margin-right: 24px;
     margin-bottom: 24px;
 
     &:nth-of-type(4n) {
       margin-right: 0;
+    }
+
+    @media ${({ theme }) => theme.breakpoint.max.L} {
+      flex-basis: calc(34% - 20px);
+      margin-right: 20px;
+      &:nth-of-type(4n) {
+        margin-right: 20px;
+      }
+      &:nth-of-type(3n) {
+        margin-right: 0;
+      }
+    }
+
+    @media ${({ theme }) => theme.breakpoint.max.M} {
+      flex-basis: calc(50% - 5px);
+      margin-right: 10px;
+      &:nth-of-type(2n) {
+        margin-right: 0px !important;
+      }
+      &:nth-of-type(3n) {
+        margin-right: 10px;
+      }
     }
   }
 `;

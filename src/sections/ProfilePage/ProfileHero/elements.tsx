@@ -11,6 +11,11 @@ export const Container = styled(Section)`
   display: flex;
   flex-direction: column;
   margin-bottom: -60px;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    padding-top: 15px;
+    padding-bottom: 50px;
+  }
 `;
 
 export const ProfileBackgroundImage = styled("div")`
@@ -21,6 +26,14 @@ export const ProfileBackgroundImage = styled("div")`
   border-radius: 16px;
   overflow: hidden;
   box-shadow: ${({ theme }) => theme.shadows.cardsShadow};
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    height: 180px;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    height: 150px;
+  }
 `;
 
 export const ProfileImg = styled("div")`
@@ -32,6 +45,17 @@ export const ProfileImg = styled("div")`
   height: 139px;
   border: 6px solid ${({ theme }) => theme.colors.white};
   margin-bottom: 16px;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    height: 120px;
+    width: 120px;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    height: 80px;
+    width: 80px;
+    border-width: 3px;
+  }
 `;
 
 export const ProfileInformationContainer = styled("div")`
@@ -44,6 +68,10 @@ export const ProfileInformationContainer = styled("div")`
   width: 100%;
 
   top: -60px;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    top: -40px;
+  }
 `;
 
 export const Row = styled("div")`
@@ -101,6 +129,10 @@ export const CreateNftButton = styled(Button)`
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.buttonColor};
   margin-right: 8px;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    width: 80px;
+  }
 `;
 
 export const EditProfileButton = styled(CreateNftButton)`

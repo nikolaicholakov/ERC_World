@@ -20,7 +20,9 @@ export const Container = styled("div")`
 
   padding: 24px 40px;
   width: 100%;
-
+  height: fit-content;
+  max-height: 472px;
+  overflow: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,6 +31,11 @@ export const Container = styled("div")`
   @media ${({ theme }) => theme.breakpoint.max.M} {
     margin: auto;
     width: 90%;
+  }
+
+  @media (orientation: landscape) {
+    max-height: 90%;
+    padding-top: 100px;
   }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {

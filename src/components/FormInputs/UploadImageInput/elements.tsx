@@ -20,6 +20,7 @@ export const InputContainer = styled("div")<{ imageUploaded: boolean }>`
     `}
 
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 `;
 

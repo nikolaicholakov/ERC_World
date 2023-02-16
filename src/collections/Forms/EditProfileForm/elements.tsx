@@ -18,6 +18,10 @@ export const Form = styled("form")`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    padding: 16px 20px;
+  }
 `;
 
 export const Description = styled("p")``;
@@ -122,6 +126,7 @@ export const BioInput = styled(FormTextArea)`
 export const ConnectMessengerContainer = styled("div")`
   margin-top: 16px;
   margin-bottom: 32px;
+  width: 100%;
 `;
 
 export const ContainerTitle = styled(Typography.H6)`

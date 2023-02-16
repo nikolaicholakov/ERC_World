@@ -35,6 +35,7 @@ export const ToReceiveContainer = styled("div")`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 24px;
   margin-bottom: 40px;
 `;
 

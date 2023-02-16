@@ -60,6 +60,7 @@ export const FirstRow = styled(Row)`
   align-items: flex-start;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 0;
 `;
 
 export const SecondRow = styled(Row)`

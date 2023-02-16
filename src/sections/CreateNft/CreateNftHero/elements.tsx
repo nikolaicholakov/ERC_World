@@ -9,11 +9,10 @@ export const SectionContainer = styled(Section)``;
 
 export const EditProfileContainer = styled("div")`
   display: flex;
-  margin-top: 115px;
   width: 100%;
   align-items: center;
   justify-content: center;
-  margin-bottom: 40px;
+  margin: 40px 0;
 `;
 
 export const Form = styled(CreateNftForm)`

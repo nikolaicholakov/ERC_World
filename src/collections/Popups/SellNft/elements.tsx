@@ -18,6 +18,12 @@ export const Container = styled("div")`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    margin: auto;
+    max-width: 90%;
+    padding: 32px 20px;
+  }
 `;
 
 export const Title = styled(Typography.H4)`

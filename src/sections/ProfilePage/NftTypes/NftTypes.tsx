@@ -112,26 +112,31 @@ export const NftTypes: React.FC<INftTypesProps> = ({ ...props }) => {
     <S.Container {...props}>
       <S.TypesContainer>
         <S.Type active={currentTab === "all"} onClick={handleChangeTab("all")}>
-          All NFTs
+          <S.Text>All NFTs</S.Text>
           <S.NumberSpan>44</S.NumberSpan>
         </S.Type>
         <S.Type active={currentTab === "created"} onClick={handleChangeTab("created")}>
-          Created<S.NumberSpan>2</S.NumberSpan>
+          <S.Text>Created</S.Text>
+          <S.NumberSpan>2</S.NumberSpan>
         </S.Type>
         <S.Type active={currentTab === "onSale"} onClick={handleChangeTab("onSale")}>
-          On Sale<S.NumberSpan>2</S.NumberSpan>
+          <S.Text>On Sale</S.Text>
+          <S.NumberSpan>2</S.NumberSpan>
         </S.Type>
         <S.Type active={currentTab === "auction"} onClick={handleChangeTab("auction")}>
-          Auction<S.NumberSpan>2</S.NumberSpan>
+          <S.Text>Auction</S.Text>
+          <S.NumberSpan>2</S.NumberSpan>
         </S.Type>
         <S.Type active={currentTab === "transfered"} onClick={handleChangeTab("transfered")}>
-          Transfered
+          <S.Text>Transfered</S.Text>
         </S.Type>
         <S.Type active={currentTab === "purchases"} onClick={handleChangeTab("purchases")}>
-          Purchases<S.NumberSpan>2</S.NumberSpan>
+          <S.Text>Purchases</S.Text>
+          <S.NumberSpan>2</S.NumberSpan>
         </S.Type>
         <S.Type active={currentTab === "favorites"} onClick={handleChangeTab("favorites")}>
-          Favorites<S.NumberSpan>2</S.NumberSpan>
+          <S.Text>Favorites</S.Text>
+          <S.NumberSpan>2</S.NumberSpan>
         </S.Type>
       </S.TypesContainer>
       <S.NftCardsContainer>

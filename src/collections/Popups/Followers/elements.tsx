@@ -10,7 +10,9 @@ export const Popup = styled(_Popup)``;
 
 export const Container = styled("div")`
   z-index: 100;
-  width: 468px;
+  width: 100%;
+  max-width: 468px;
+  height: fit-content;
   max-height: 490px;
   border-radius: 8px;
   background-color: ${({ theme }) => theme.colors.white};
@@ -28,6 +30,15 @@ export const Container = styled("div")`
   padding-left: 24px;
   padding-right: 12px;
   padding-bottom: 23px;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    max-width: 90%;
+    padding-top: 20px;
+    padding-bottom: 12px;
+    @media (orientation: landscape) {
+      max-height: 90%;
+    }
+  }
 `;
 
 export const Title = styled(Typography.H4)`

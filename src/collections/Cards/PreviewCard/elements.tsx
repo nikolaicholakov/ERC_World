@@ -6,6 +6,7 @@ import "swiper/css";
 export const Container = styled("div")`
   max-width: 100%;
   display: flex;
+  width: 100%;
   height: 305px;
   align-items: flex-start;
   justify-content: flex-start;
@@ -15,6 +16,11 @@ export const Container = styled("div")`
 
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: ${({ theme }) => theme.shadows.cardsShadow};
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    max-width: 252px;
+    align-self: center;
+  }
 `;
 
 export const ImgContainer = styled("a")<{ previewSrc: string | ArrayBuffer | null }>`

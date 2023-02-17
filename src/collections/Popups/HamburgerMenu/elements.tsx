@@ -12,7 +12,7 @@ export const Image = styled(_Image)``;
 
 export const Popup = styled(_Popup)``;
 
-export const HamburgerMenuContainer = styled("div")`
+export const HamburgerMenuContainer = styled("div")<{ popupOpened: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -20,10 +20,10 @@ export const HamburgerMenuContainer = styled("div")`
   height: 100%;
   position: fixed;
   top: 0;
-  left: 0;
+  left: ${({ popupOpened }) => (popupOpened ? "0" : "-200px")};
+  transition: left 0.5s ease-in-out;
   background-color: ${({ theme }) => theme.colors.white};
   z-index: 101;
-
   padding: 20px;
 `;
 

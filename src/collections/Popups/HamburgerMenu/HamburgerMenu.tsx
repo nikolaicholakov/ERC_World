@@ -16,7 +16,7 @@ export const HamburgerMenuPopup: React.FC<ICartPopupProps> = ({
   return (
     <>
       <S.Popup popupOpened={popupOpened} togglePopup={togglePopup(false)} />
-      <S.HamburgerMenuContainer {...props}>
+      <S.HamburgerMenuContainer popupOpened={popupOpened} {...props}>
         <S.Logo />
         <S.NavigationContainer>
           <S.Navigation>

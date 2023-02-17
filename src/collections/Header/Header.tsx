@@ -32,8 +32,7 @@ export const Header = ({ ...props }: HeaderProps) => {
     <S.Header {...props}>
       <S.HeaderContainer>
         <S.HamMenuButton onClick={toggleHamMenu(true)} menuOpened={openHamMenu} />
-        {/* {openHamMenu && <S.HamMenu />} */}
-        {openHamMenu && <S.HamMenu popupOpened={openHamMenu} togglePopup={toggleHamMenu} />}
+        <S.HamMenu popupOpened={openHamMenu} togglePopup={toggleHamMenu} />
         <S.LeftSide>
           <S.Logo />
           <S.NavigationContainer>

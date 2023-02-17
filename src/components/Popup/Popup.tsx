@@ -9,5 +9,7 @@ interface IPopupProps extends HTMLDivProps {
 }
 
 export const Popup: React.FC<IPopupProps> = ({ togglePopup, popupOpened, ...props }) => {
-  return <S.PopupContainer {...props} onClick={togglePopup}></S.PopupContainer>;
+  return (
+    <S.PopupContainer {...props} onClick={togglePopup} popupOpened={popupOpened}></S.PopupContainer>
+  );
 };

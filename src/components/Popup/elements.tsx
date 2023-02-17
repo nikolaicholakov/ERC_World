@@ -3,8 +3,8 @@ import _Image from "next/image";
 
 export const Image = styled(_Image)``;
 
-export const PopupContainer = styled("div")`
-  display: flex;
+export const PopupContainer = styled("div")<{ popupOpened: boolean }>`
+  display: ${({ popupOpened }) => (popupOpened ? "flex" : "none")};
   position: fixed;
   align-items: center;
   justify-content: center;

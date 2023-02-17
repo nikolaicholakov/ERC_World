@@ -1,5 +1,5 @@
 import { RefObject } from "react";
-import { IHomeHeroSwiperCard, ITrendingCollectionsSwiperCard } from "types";
+import { ITrendingCollectionsSwiperCard } from "types";
 import * as S from "./elements";
 import "swiper/css";
 

@@ -6,5 +6,5 @@ export interface LoadMoreButtonProps extends HTMLButtonProps {
 }
 
 export const LoadMoreButton: React.FC<LoadMoreButtonProps> = ({ ...props }) => {
-  return <S.Button {...props}>Load more</S.Button>;
+  return <S.Button {...props}></S.Button>;
 };

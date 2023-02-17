@@ -38,3 +38,21 @@ export const shallowReplaceQuery = (
     { shallow: true }
   );
 };
+
+export const loadMoreCollections = (
+  setLoader,
+  setCollectionState,
+  fetcher,
+  startIndex,
+  lastIndex,
+  setLastIndex,
+  setStartIndex
+) => {
+  setLoader(true);
+  fetcher(startIndex, lastIndex).then(newCollection => {
+    setCollectionState(oldCollection => [...oldCollection, ...newCollection]);
+    setLoader(false);
+  });
+  setStartIndex(startIndex + 10);
+  setLastIndex(lastIndex + 10);
+};

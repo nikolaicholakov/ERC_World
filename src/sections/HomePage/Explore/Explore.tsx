@@ -1,83 +1,58 @@
-import React, { RefObject } from "react";
+import { fetchExploreCollections } from "pages/api/collections/explore";
+import React, { RefObject, useEffect, useState } from "react";
 import { IExploreNftCard } from "types";
+import { loadMoreCollections } from "utils";
 import * as S from "./elements";
 
 interface IExploreProps {
   ref?: RefObject<HTMLDivElement>;
 }
 
-const cards: IExploreNftCard[] = [
-  {
-    image: { src: "/imgs/nft1.png", width: 228, height: 220 },
-    collectionName: "Collection Name",
-    nftName: "NTF Name #020",
-    nftsAvailable: "12/1000",
-    price: 10
-  },
-  {
-    image: { src: "/imgs/nft2.png", width: 228, height: 220 },
-    collectionName: "Collection Name",
-    nftName: "NTF Name #020",
-    nftsAvailable: "12/1000",
-    price: 10
-  },
-  {
-    image: { src: "/imgs/nft1.png", width: 228, height: 220 },
-    collectionName: "Collection Name",
-    nftName: "NTF Name #020",
-    nftsAvailable: "12/1000",
-    price: 10
-  },
-  {
-    image: { src: "/imgs/nft2.png", width: 228, height: 220 },
-    collectionName: "Collection Name",
-    nftName: "NTF Name #020",
-    nftsAvailable: "12/1000",
-    price: 10
-  },
-  {
-    image: { src: "/imgs/nft1.png", width: 228, height: 220 },
-    collectionName: "Collection Name",
-    nftName: "NTF Name #020",
-    nftsAvailable: "12/1000",
-    price: 0.11
-  },
-  {
-    image: { src: "/imgs/nft2.png", width: 228, height: 220 },
-    collectionName: "Collection Name",
-    nftName: "NTF Name #020",
-    nftsAvailable: "12/1000",
-    price: 113.0
-  },
-  {
-    image: { src: "/imgs/nft1.png", width: 228, height: 220 },
-    collectionName: "Collection Name",
-    nftName: "NTF Name #020",
-    nftsAvailable: "12/1000",
-    price: 10
-  },
-  {
-    image: { src: "/imgs/nft2.png", width: 228, height: 220 },
-    collectionName: "Collection Name",
-    nftName: "NTF Name #020",
-    nftsAvailable: "12/1000",
-    price: 10
-  }
-];
-
 export const Explore: React.FC<IExploreProps> = ({ ...props }) => {
+  const [exploreCollections, setExploreCollections] = useState<IExploreNftCard[]>([]);
+
+  const [startIndex, setStartIndex] = useState(0);
+  const [lastIndex, setLastIndex] = useState(8);
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    fetchExploreCollections(startIndex, lastIndex).then(collection =>
+      setExploreCollections(collection)
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const loadMore = () => {
+    loadMoreCollections(
+      setIsLoading,
+      setExploreCollections,
+      fetchExploreCollections,
+      startIndex,
+      lastIndex,
+      setLastIndex,
+      setStartIndex
+    );
+  };
+
   return (
     <S.Container {...props}>
       <S.SectionHeading>Explore</S.SectionHeading>
       <S.Wrapper>
         <S.CardsContainer>
-          {cards.map((card, i) => (
-            <S.ExploreCard key={"exploreCard" + i} {...card} />
-          ))}
-          <S.LoadMoreCard />
+          {exploreCollections.length === 0 ? (
+            "no data"
+          ) : (
+            <>
+              {exploreCollections.map((card, i) => (
+                <S.ExploreCard key={"exploreCard" + i} {...card} />
+              ))}
+              <S.LoadMoreMobile onClick={loadMore} isLoading={isLoading} />
+            </>
+          )}
         </S.CardsContainer>
       </S.Wrapper>
-      <S.LoadMore />
+      {exploreCollections.length !== 0 && <S.LoadMore onClick={loadMore} isLoading={isLoading} />}
     </S.Container>
   );
 };

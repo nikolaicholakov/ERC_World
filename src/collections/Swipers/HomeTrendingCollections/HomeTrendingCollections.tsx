@@ -11,17 +11,20 @@ import { Swiper as TSwiper, SwiperOptions } from "swiper/types";
 
 export interface IHomeTrendingCollectionsSwiper {
   swiperCards: ITrendingCollectionsSwiperCard[];
+  loadMoreCollections: () => void;
+  isLoading: boolean;
   ref?: RefObject<HTMLDivElement>;
 }
 
 export const HomeTrendingCollectionsSwiper: React.FC<IHomeTrendingCollectionsSwiper> = ({
   swiperCards,
+  isLoading,
+  loadMoreCollections,
   ...props
 }) => {
   const [swiper, setSwiper] = useState<TSwiper | null>(null);
 
   const swiperSettings: SwiperOptions = {
-    loop: true,
     speed: 800,
     slidesPerView: "auto",
     pagination: {
@@ -32,11 +35,21 @@ export const HomeTrendingCollectionsSwiper: React.FC<IHomeTrendingCollectionsSwi
 
   return (
     <S.Swiper onSwiper={swiper => setSwiper(swiper)} {...swiperSettings} {...props}>
-      {swiperCards.map((slide, i) => (
-        <SwiperSlide key={"swiperSlide" + i}>
-          <S.SlideContent {...slide} />
-        </SwiperSlide>
-      ))}
+      {swiperCards.length === 0 ? (
+        "no data"
+      ) : (
+        <>
+          {swiperCards.map((slide, i) => (
+            <SwiperSlide key={"swiperSlide" + i}>
+              <S.SlideContent {...slide} />
+            </SwiperSlide>
+          ))}
+
+          <SwiperSlide className='swiper-slide-load-more'>
+            <S.LoadMoreButton onClick={loadMoreCollections} isLoading={isLoading} />
+          </SwiperSlide>
+        </>
+      )}
       <S.Shadow />
     </S.Swiper>
   );

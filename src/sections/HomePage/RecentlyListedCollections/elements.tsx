@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import _Image from "next/image";
 import { LoadMoreButton, Section, Typography } from "components";
-import { RecentlyListedCollectionCard } from "collections";
+import { LoadMoreCard, RecentlyListedCollectionCard } from "collections";
 
 export const Container = styled(Section)`
   padding-bottom: 40px;
@@ -38,7 +38,7 @@ export const SectionHeading = styled(Typography.H2)`
 export const CardsContainer = styled("div")`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
 
   @media ${({ theme }) => theme.breakpoint.max.L} {
@@ -53,6 +53,8 @@ export const CollectionCard = styled(RecentlyListedCollectionCard)`
   flex-shrink: 1;
   margin-right: 19px;
   margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
 
   &:nth-of-type(6n) {
     margin-right: 0;
@@ -88,18 +90,22 @@ export const CollectionCard = styled(RecentlyListedCollectionCard)`
   }
 `;
 
-export const LoadMore = styled(LoadMoreButton)`
+export const LoadMore = styled(LoadMoreCard)`
+  display: block;
   @media ${({ theme }) => theme.breakpoint.max.L} {
     display: none;
   }
 `;
 
-export const LoadMoreCard = styled(LoadMore)`
+export const LoadMoreMobile = styled(LoadMoreCard)`
   display: none;
   @media ${({ theme }) => theme.breakpoint.max.L} {
-    display: block;
-    margin-bottom: 14px;
-    flex-basis: 20%;
-    padding-inline: 15px;
+    display: flex;
+    height: calc(100% - 14px);
+    border-radius: 12px;
+
+    > button {
+      width: 100px;
+    }
   }
 `;

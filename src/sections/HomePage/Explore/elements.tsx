@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import _Image from "next/image";
 import { LoadMoreButton, Section, Typography } from "components";
-import { ExploreCard as _ExploreCard } from "collections";
+import { ExploreCard as _ExploreCard, LoadMoreCard } from "collections";
 
 export const Container = styled(Section)`
   padding-bottom: 40px;
@@ -87,18 +87,22 @@ export const ExploreCard = styled(_ExploreCard)`
   }
 `;
 
-export const LoadMore = styled(LoadMoreButton)`
+export const LoadMore = styled(LoadMoreCard)`
+  display: block;
   @media ${({ theme }) => theme.breakpoint.max.L} {
     display: none;
   }
 `;
 
-export const LoadMoreCard = styled(LoadMore)`
+export const LoadMoreMobile = styled(LoadMoreCard)`
   display: none;
   @media ${({ theme }) => theme.breakpoint.max.L} {
-    display: block;
-    margin-bottom: 14px;
-    flex-basis: 20%;
-    padding-inline: 25px;
+    display: flex;
+    height: calc(100% - 14px);
+    border-radius: 12px;
+
+    > button {
+      width: 100px;
+    }
   }
 `;

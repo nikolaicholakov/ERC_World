@@ -2,31 +2,42 @@ import { Typography, Button as _Button, HomeTrendingCollection } from "component
 import styled from "styled-components";
 import _Image from "next/image";
 import { Swiper as _Swiper } from "swiper/react";
-// import { ArrowButton } from "components/Buttons";
 import "swiper/css";
+import { LoadMoreCard } from "collections/Cards";
 
 export const Image = styled(_Image)`
   pointer-events: none;
 `;
 
-export const SlideContent = styled(HomeTrendingCollection)``;
+export const SlideContent = styled(HomeTrendingCollection)`
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const LoadMoreButton = styled(LoadMoreCard)``;
 
 export const Swiper = styled(_Swiper)`
   padding-bottom: 24px;
 
   .swiper-slide {
-    max-width: 176px;
+    width: 176px;
     margin-right: 24px;
+    height: auto;
 
     @media ${({ theme }) => theme.breakpoint.max.M} {
-      max-width: 160px;
+      width: 160px;
       margin-right: 15px;
     }
 
     @media ${({ theme }) => theme.breakpoint.max.S} {
-      max-width: 140px;
+      width: 140px;
       margin-right: 10px;
     }
+  }
+
+  .swiper-slide-load-more {
+    width: 100px;
   }
 
   .swiper-pagination-progressbar {

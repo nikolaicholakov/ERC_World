@@ -31,11 +31,10 @@ export const Container = styled("div")`
   @media ${({ theme }) => theme.breakpoint.max.M} {
     margin: auto;
     width: 90%;
-  }
-
-  @media (orientation: landscape) {
-    max-height: 90%;
-    padding-top: 100px;
+    @media (orientation: landscape) {
+      max-height: 90%;
+      padding-top: 100px;
+    }
   }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {

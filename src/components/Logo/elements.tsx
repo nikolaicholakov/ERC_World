@@ -6,6 +6,7 @@ export const Image = styled(_Image)``;
 export const Container = styled("a")`
   padding: 10px 27px;
   background-color: #2c850d;
+  width: fit-content;
 `;
 
 export const Text = styled("span")`

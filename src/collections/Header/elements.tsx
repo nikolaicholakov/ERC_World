@@ -1,7 +1,13 @@
 import styled from "styled-components";
 import type { HeaderProps } from "./Header";
-import { Button, Logo as _Logo, IconButton, CartButton as _CartButton } from "components";
-import { CartPopup as _CartPopup, ConnectWallet } from "collections/Popups";
+import {
+  Button,
+  Logo as _Logo,
+  IconButton,
+  CartButton as _CartButton,
+  HamburgerMenuButton
+} from "components";
+import { CartPopup as _CartPopup, ConnectWallet, HamburgerMenuPopup } from "collections/Popups";
 
 export const Header = styled("header")<HeaderProps>`
   background-color: ${({ theme }) => theme.colors.white};
@@ -15,11 +21,23 @@ export const HeaderContainer = styled("div")`
   max-width: 1440px;
   justify-content: space-between;
   margin: 0 auto;
+
+  @media (max-width: 800px) {
+    padding: 16px 15px;
+  }
 `;
+
+export const HamMenuButton = styled(HamburgerMenuButton)``;
+
+export const HamMenu = styled(HamburgerMenuPopup)``;
 
 export const LeftSide = styled("div")`
   display: flex;
   align-items: center;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 
 export const NotConnected = styled("div")`
@@ -51,6 +69,7 @@ export const Link = styled("a")`
 
 export const ConnectWalletButton = styled(Button)`
   align-self: flex-end;
+  height: 44px;
   background-color: ${({ theme }) => theme.colors.buttonColor};
 `;
 
@@ -65,8 +84,12 @@ export const CreateNftButton = styled(Button)`
   padding-block: 12px;
   background-color: ${({ theme }) => theme.colors.sectionHeadersColor};
   color: ${({ theme }) => theme.colors.white};
-
+  height: 44px;
   margin-right: 16px;
+
+  @media (max-width: 800px) {
+    margin-right: 8px;
+  }
 `;
 
 export const WalletButton = styled(IconButton)`
@@ -75,6 +98,9 @@ export const WalletButton = styled(IconButton)`
   background-color: ${({ theme }) => theme.colors.buttonColor}0f;
 
   margin-right: 16px;
+  @media (max-width: 800px) {
+    margin-right: 8px;
+  }
 `;
 
 export const ProfileButton = styled(IconButton)`
@@ -85,6 +111,9 @@ export const ProfileButton = styled(IconButton)`
 
 export const CartButton = styled(_CartButton)`
   margin-right: 16px;
+  @media (max-width: 800px) {
+    margin-right: 8px;
+  }
 `;
 
 export const LineSeparator = styled("div")`
@@ -92,6 +121,10 @@ export const LineSeparator = styled("div")`
   width: 1px;
   background-color: ${({ theme }) => theme.colors.grey};
   margin-right: 16px;
+
+  @media (max-width: 800px) {
+    margin-right: 8px;
+  }
 `;
 
 export const CartPopup = styled(_CartPopup)``;

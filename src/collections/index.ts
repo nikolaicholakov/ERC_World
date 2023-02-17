@@ -6,3 +6,4 @@ export * from "./Popups";
 export * from "./Cards";
 export * from "./NftSaleInfo";
 export * from "./Tables";
+export * from "./HamburgerMenu";

@@ -9,6 +9,7 @@ export interface HeaderProps extends HTMLHeaderProps {}
 export const Header = ({ ...props }: HeaderProps) => {
   const [walletPopupOpened, setWalletPopupOpened] = useState<boolean>(false);
   const [cartPopupOpened, setCartPopupOpened] = useState<boolean>(false);
+  const [openHamMenu, setOpenHamMenu] = useState<boolean>(false);
 
   const toggleWalletPopup = (state: boolean) => () => {
     setWalletPopupOpened(state);
@@ -20,11 +21,19 @@ export const Header = ({ ...props }: HeaderProps) => {
     document.body.style.overflow = state ? "hidden" : "auto";
   };
 
+  const toggleHamMenu = (state: boolean) => () => {
+    setOpenHamMenu(state);
+    document.body.style.overflow = state ? "hidden" : "auto";
+  };
+
   const { walletConnected } = useWalletConnected();
 
   return (
     <S.Header {...props}>
       <S.HeaderContainer>
+        <S.HamMenuButton onClick={toggleHamMenu(true)} menuOpened={openHamMenu} />
+        {/* {openHamMenu && <S.HamMenu />} */}
+        {openHamMenu && <S.HamMenu popupOpened={openHamMenu} togglePopup={toggleHamMenu} />}
         <S.LeftSide>
           <S.Logo />
           <S.NavigationContainer>

@@ -3,6 +3,8 @@ import type { HTMLHeaderProps } from "types";
 import { useEffect, useState } from "react";
 import { useWalletConnected } from "hooks";
 import Link from "next/link";
+import { removeWalletConnectedListener, walletConnectedListener } from "web3";
+//wallet connect imports
 
 export interface HeaderProps extends HTMLHeaderProps {}
 
@@ -10,6 +12,17 @@ export const Header = ({ ...props }: HeaderProps) => {
   const [walletPopupOpened, setWalletPopupOpened] = useState<boolean>(false);
   const [cartPopupOpened, setCartPopupOpened] = useState<boolean>(false);
   const [openHamMenu, setOpenHamMenu] = useState<boolean>(false);
+
+  const { setWalletConnected, walletConnected } = useWalletConnected();
+
+  useEffect(() => {
+    walletConnectedListener(setWalletConnected);
+
+    return () => {
+      removeWalletConnectedListener;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const toggleWalletPopup = (state: boolean) => () => {
     setWalletPopupOpened(state);
@@ -25,8 +38,6 @@ export const Header = ({ ...props }: HeaderProps) => {
     setOpenHamMenu(state);
     document.body.style.overflow = state ? "hidden" : "auto";
   };
-
-  const { walletConnected } = useWalletConnected();
 
   return (
     <S.Header {...props}>
@@ -49,7 +60,7 @@ export const Header = ({ ...props }: HeaderProps) => {
             </S.Navigation>
           </S.NavigationContainer>
         </S.LeftSide>
-        {walletConnected ? (
+        {walletConnected !== "" ? (
           <S.Connected>
             <S.CartButton onClick={toggleCartPopup(true)} />
             {cartPopupOpened && (

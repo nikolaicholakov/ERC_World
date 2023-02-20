@@ -82,7 +82,7 @@ export const SalesHero: React.FC<ISalesHeroProps> = ({ ...props }) => {
         <S.HistoryTable tableData={exampleTableData} />
       </S.SalesHistoryContainer>
       <S.LoadMoreContainer>
-        <S.LoadMore />
+        <S.LoadMore isLoading={false} />
       </S.LoadMoreContainer>
     </S.Container>
   );

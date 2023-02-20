@@ -60,7 +60,7 @@ export const CollectionName = styled("span")`
 
 export const ButtonsContainer = styled("div")`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   width: 100%;
   @media ${({ theme }) => theme.breakpoint.max.M} {
     justify-content: space-between;

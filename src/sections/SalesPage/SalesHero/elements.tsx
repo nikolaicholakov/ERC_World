@@ -1,7 +1,12 @@
 import styled, { css } from "styled-components";
 import _Image from "next/image";
 import { LoadMoreButton, Section, Typography } from "components";
-import { NftSaleInfo, HistoryTable as _HistoryTable, BidsTable as _BidsTable } from "collections";
+import {
+  NftSaleInfo,
+  HistoryTable as _HistoryTable,
+  BidsTable as _BidsTable,
+  LoadMoreCard
+} from "collections";
 
 export const Image = styled(_Image)``;
 
@@ -84,7 +89,9 @@ export const LoadMoreContainer = styled("div")`
   }
 `;
 
-export const LoadMore = styled(LoadMoreButton)``;
+export const LoadMore = styled(LoadMoreCard)`
+  width: 100%;
+`;
 
 export const ContainerTitle = styled(Typography.H5)`
   font-weight: 600;

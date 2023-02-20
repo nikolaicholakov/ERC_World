@@ -65,3 +65,26 @@ export const Button = styled(_Button)`
     width: 120px;
   }
 `;
+
+export const WalletTypesContainer = styled("div")`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 32px;
+`;
+
+export const WalletContainer = styled("div")`
+  padding: 16px 24px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid ${({ theme }) => theme.colors.secondaryTextColor}1f;
+
+  margin-bottom: 16px;
+  &:last-of-type {
+    margin-bottom: 0px;
+  }
+`;
+
+export const WalletType = styled(Typography.H6)``;

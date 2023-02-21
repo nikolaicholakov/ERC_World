@@ -7,7 +7,12 @@ import {
   CartButton as _CartButton,
   HamburgerMenuButton
 } from "components";
-import { CartPopup as _CartPopup, ConnectWallet, HamburgerMenuPopup } from "collections/Popups";
+import {
+  CartPopup as _CartPopup,
+  ConnectWallet,
+  HamburgerMenuPopup,
+  DropdownPopup as _DropdownPopup
+} from "collections/Popups";
 
 export const Header = styled("header")<HeaderProps>`
   background-color: ${({ theme }) => theme.colors.white};
@@ -70,6 +75,8 @@ export const Link = styled("a")`
 export const ConnectWalletButton = styled(Button)`
   align-self: flex-end;
   height: 44px;
+  width: 138px;
+  padding: 0;
   background-color: ${({ theme }) => theme.colors.buttonColor};
 `;
 
@@ -128,3 +135,7 @@ export const LineSeparator = styled("div")`
 `;
 
 export const CartPopup = styled(_CartPopup)``;
+
+export const DropdownPopup = styled(_DropdownPopup)``;
+
+export const WalletContainer = styled("div")``;

@@ -1,8 +1,7 @@
-import { useWeb3Modal } from "@web3modal/react";
-import { useWalletConnected } from "hooks";
-import React, { RefObject, useState } from "react";
+import React, { RefObject, useEffect, useState } from "react";
 import { HTMLDivProps } from "types";
-import { connectMetaMask } from "web3";
+import { useConnect } from "wagmi";
+// import { connectMetaMask } from "web3";
 import * as S from "./elements";
 
 interface IConnectWalletProps extends HTMLDivProps {
@@ -16,22 +15,11 @@ export const ConnectWallet: React.FC<IConnectWalletProps> = ({
   togglePopup,
   ...props
 }) => {
-  const connectWithMetaMask = async () => {
-    try {
-      await connectMetaMask();
-      togglePopup(false)();
-      document.body.style.overflow = "auto";
-    } catch (e: any) {
-      alert(e.message);
-      console.log(e);
-    }
-  };
+  const { connect, connectors, error, isLoading, pendingConnector, isSuccess } = useConnect();
 
-  const { close, isOpen, open, setDefaultChain } = useWeb3Modal();
-
-  const connectwithWalletConnect = async () => {
-    togglePopup(false)();
-    await open();
+  const connectWallet = (connector: any) => () => {
+    connect({ connector });
+    document.body.style.overflow = "auto";
   };
 
   return (
@@ -45,15 +33,24 @@ export const ConnectWallet: React.FC<IConnectWalletProps> = ({
           </S.SubTitle>
         </S.TextContainer>
         <S.WalletTypesContainer>
-          <S.WalletContainer onClick={connectWithMetaMask}>
+          {/* <S.WalletContainer onClick={connectWithMetaMask}>
             <S.WalletType>MetaMask</S.WalletType>
-          </S.WalletContainer>
-          <S.WalletContainer>
+          </S.WalletContainer> */}
+          {connectors.map(connector => (
+            <S.WalletContainer key={connector.name} onClick={connectWallet(connector)}>
+              <S.WalletType key={connector.id}>
+                {connector.name}
+                {!connector.ready && " (unsupported)"}
+                {isLoading && connector.id === pendingConnector?.id && " (connecting)"}
+              </S.WalletType>
+            </S.WalletContainer>
+          ))}
+          {/* <S.WalletContainer>
             <S.WalletType>Coinbase</S.WalletType>
           </S.WalletContainer>
           <S.WalletContainer onClick={connectwithWalletConnect}>
             <S.WalletType>WalletConnect</S.WalletType>
-          </S.WalletContainer>
+          </S.WalletContainer> */}
         </S.WalletTypesContainer>
         <S.ButtonsContainer>
           <S.Button onClick={togglePopup(false)}>Cancel</S.Button>

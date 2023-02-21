@@ -2,7 +2,7 @@ import * as S from "./elements";
 import { forwardRef, ForwardedRef, RefObject } from "react";
 import type { HTMLButtonProps, IFontAwesomeIcon } from "types";
 
-export interface IconButtonProps extends IFontAwesomeIcon {
+export interface IconButtonProps extends IFontAwesomeIcon, HTMLButtonProps {
   ref?: RefObject<HTMLButtonElement>;
 }
 

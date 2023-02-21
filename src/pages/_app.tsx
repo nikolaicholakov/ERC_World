@@ -12,8 +12,11 @@ import { publicProvider } from "wagmi/providers/public";
 import { InjectedConnector } from "wagmi/connectors/injected";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const { chains, provider, webSocketProvider } = configureChains([mainnet], [publicProvider()]);
+
+const queryClient = new QueryClient();
 
 const client = createClient({
   autoConnect: true,
@@ -55,13 +58,15 @@ function MyApp({ Component, pageProps }: any) {
           <link rel='icon' href='/favicon.ico' />
         </Head>
         <GlobalStyles />
-        <WagmiConfig client={client}>
-          <Header />
-          <React.StrictMode>
-            <Component {...pageProps} />
-          </React.StrictMode>
-          <Footer />
-        </WagmiConfig>
+        <QueryClientProvider client={queryClient}>
+          <WagmiConfig client={client}>
+            <Header />
+            <React.StrictMode>
+              <Component {...pageProps} />
+            </React.StrictMode>
+            <Footer />
+          </WagmiConfig>
+        </QueryClientProvider>
       </WalletContextProvider>
     </ThemeProvider>
   );

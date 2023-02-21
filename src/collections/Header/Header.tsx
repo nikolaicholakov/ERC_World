@@ -3,8 +3,6 @@ import type { HTMLHeaderProps } from "types";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useAccount } from "wagmi";
-// import { removeWalletConnectedListener, walletConnectedListener } from "web3";
-// import { useAccount } from "wagmi";
 
 export interface HeaderProps extends HTMLHeaderProps {}
 
@@ -33,6 +31,7 @@ export const Header = ({ ...props }: HeaderProps) => {
 
   const toggleDropdownPopup = (state: boolean) => () => {
     setDropdownPopupOpened(state);
+    toggleWalletPopup(false)();
     document.body.style.overflow = state ? "hidden" : "auto";
   };
 

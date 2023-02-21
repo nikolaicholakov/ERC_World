@@ -16,12 +16,14 @@ for (let i = 0; i < 100; i++) {
   });
 }
 
-export const fetchTrendingCollections = async (startIndex: number, lastIndex: number) => {
-  const response = await fetch("/api/collections/trending");
-  const data = await response.json();
-  return data.data.slice(startIndex, lastIndex);
+export const fetchTrendingCollections = async (startIndex: number = 0, lastIndex: number = 10) => {
+  const response = await fetch(`/api/collections/trending?from=${startIndex}&to=${lastIndex}`);
+  const { data } = await response.json();
+  return data;
 };
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<ApiResponseBase<any>>) {
-  res.status(200).json({ data: dummyCardData });
+  const { from, to } = req.query;
+
+  res.status(200).json({ data: dummyCardData.slice(Number(from), Number(to)) });
 }

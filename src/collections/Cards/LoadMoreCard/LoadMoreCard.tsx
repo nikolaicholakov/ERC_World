@@ -5,13 +5,14 @@ import "swiper/css";
 
 export interface LoadMoreCard extends HTMLDivProps {
   isLoading: boolean;
+  disabled?: boolean;
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const LoadMoreCard: React.FC<LoadMoreCard> = ({ isLoading, ...props }) => {
+export const LoadMoreCard: React.FC<LoadMoreCard> = ({ disabled, isLoading, ...props }) => {
   return (
     <S.Container {...props}>
-      <S.Button>
+      <S.Button disabled={disabled}>
         {isLoading ? (
           <S.Loader>
             <S.LoaderElement />

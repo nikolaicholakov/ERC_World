@@ -2,7 +2,8 @@ import * as S from "./elements";
 import type { HTMLHeaderProps } from "types";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useAccount } from "wagmi";
+import { useAccount, usePrepareSendTransaction, useSendTransaction } from "wagmi";
+import { formatEther, parseUnits } from "ethers/lib/utils";
 
 export interface HeaderProps extends HTMLHeaderProps {}
 
@@ -35,6 +36,17 @@ export const Header = ({ ...props }: HeaderProps) => {
     document.body.style.overflow = state ? "hidden" : "auto";
   };
 
+  const { config } = usePrepareSendTransaction({
+    request: {
+      to: "0x0687D21ba577FD40495Aa5B567D39FBA74E177ba",
+      value: parseUnits("0.0001", "ether")
+    }
+  });
+
+  // console.log(config);
+
+  const { data, isLoading, isSuccess, sendTransaction } = useSendTransaction(config);
+
   return (
     <S.Header {...props}>
       <S.HeaderContainer>
@@ -58,6 +70,7 @@ export const Header = ({ ...props }: HeaderProps) => {
         </S.LeftSide>
         {address ? (
           <S.Connected>
+            <button onClick={() => sendTransaction?.()}>Sent Eth</button>
             <S.CartButton onClick={toggleCartPopup(true)} />
             {cartPopupOpened && (
               <S.CartPopup togglePopup={toggleCartPopup} popupOpened={cartPopupOpened} />

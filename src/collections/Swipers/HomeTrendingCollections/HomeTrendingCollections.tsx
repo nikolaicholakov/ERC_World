@@ -36,7 +36,7 @@ export const HomeTrendingCollectionsSwiper: React.FC<IHomeTrendingCollectionsSwi
   return (
     <S.Swiper onSwiper={swiper => setSwiper(swiper)} {...swiperSettings} {...props}>
       {swiperCards.length === 0 ? (
-        "no data"
+        <S.LoadMoreButton onClick={loadMoreCollections} isLoading={true} />
       ) : (
         <>
           {swiperCards.map((slide, i) => (

@@ -1,3 +1,4 @@
+import { NextApiResponse } from "next";
 import { NextRouter } from "next/router";
 import { ParsedUrlQueryInput } from "querystring";
 import { KeyOfType } from "types";
@@ -38,21 +39,8 @@ export const shallowReplaceQuery = (
     { shallow: true }
   );
 };
+type ErrorType = { message: string; code: number };
 
-export const loadMoreCollections = (
-  setLoader,
-  setCollectionState,
-  fetcher,
-  startIndex,
-  lastIndex,
-  setLastIndex,
-  setStartIndex
-) => {
-  setLoader(true);
-  fetcher(startIndex, lastIndex).then(newCollection => {
-    setCollectionState(oldCollection => [...oldCollection, ...newCollection]);
-    setLoader(false);
-  });
-  setStartIndex(startIndex + 10);
-  setLastIndex(lastIndex + 10);
+export const createError = (error: ErrorType, res: NextApiResponse) => {
+  return res.status(error.code).json({ message: error.message });
 };

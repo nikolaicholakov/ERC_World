@@ -91,7 +91,7 @@ export const CollectionCard = styled(RecentlyListedCollectionCard)`
 `;
 
 export const LoadMore = styled(LoadMoreCard)`
-  display: block;
+  display: flex;
   @media ${({ theme }) => theme.breakpoint.max.L} {
     display: none;
   }

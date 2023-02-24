@@ -1,5 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
-import { fetchExploreCollections } from "pages/api/collections/explore";
+import { useQueries } from "hooks";
 import React, { RefObject, useEffect, useState } from "react";
 import { IExploreNftCard } from "types";
 import * as S from "./elements";
@@ -11,30 +10,46 @@ interface IExploreProps {
 export const Explore: React.FC<IExploreProps> = ({ ...props }) => {
   const [exploreCollections, setExploreCollections] = useState<IExploreNftCard[]>([]);
 
+  const query = useQueries();
+
   const [startIndex, setStartIndex] = useState(0);
   const [lastIndex, setLastIndex] = useState(8);
   const [step, setStep] = useState(8);
+  const [queryError, setQueryError] = useState<null | string>(null);
 
   const loadMore = () => {
     setStartIndex(startIndex + step);
     setLastIndex(lastIndex + step);
   };
 
-  const { status, data, error, isFetching, isPreviousData } = useQuery({
-    queryKey: ["exploreCollections", `from=${startIndex}&to=${lastIndex}`],
-    queryFn: () => fetchExploreCollections(startIndex, lastIndex),
-    keepPreviousData: true,
-    staleTime: 10000
-  });
+  const { status, data, error, isFetching, isPreviousData } = query.GET.collections.explore(
+    startIndex,
+    lastIndex
+  );
 
   useEffect(() => {
     if (data) {
-      setExploreCollections(oldState => [...oldState, ...data]);
+      if (exploreCollections[exploreCollections.length - 1] === data[data.length - 1]) {
+        return;
+      } else {
+        setExploreCollections(oldCollection => [...oldCollection, ...data]);
+      }
     } else {
-      setExploreCollections([]);
+      if (exploreCollections.length === 0) {
+        setExploreCollections([]);
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
+
+  useEffect(() => {
+    if (error) {
+      setStartIndex(startIndex - step);
+      setLastIndex(lastIndex - step);
+      setQueryError(error.response?.data.message);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [error]);
 
   return (
     <S.Container {...props}>
@@ -42,7 +57,7 @@ export const Explore: React.FC<IExploreProps> = ({ ...props }) => {
       <S.Wrapper>
         <S.CardsContainer>
           {exploreCollections.length === 0 ? (
-            "no data"
+            <S.LoadMore onClick={loadMore} isLoading={true} />
           ) : (
             <>
               {exploreCollections.map((card, i) => (
@@ -54,6 +69,7 @@ export const Explore: React.FC<IExploreProps> = ({ ...props }) => {
         </S.CardsContainer>
       </S.Wrapper>
       {exploreCollections.length !== 0 && <S.LoadMore onClick={loadMore} isLoading={isFetching} />}
+      <span>{queryError}</span>
     </S.Container>
   );
 };

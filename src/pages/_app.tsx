@@ -5,7 +5,7 @@ import { Header, Footer } from "collections";
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 import { WalletContextProvider } from "contexts";
 import React from "react";
-import { configureChains, createClient, WagmiConfig } from "wagmi";
+import { configureChains, createClient, goerli, WagmiConfig } from "wagmi";
 import { arbitrum, mainnet, polygon } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
@@ -14,7 +14,10 @@ import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-const { chains, provider, webSocketProvider } = configureChains([mainnet], [publicProvider()]);
+const { chains, provider, webSocketProvider } = configureChains(
+  [mainnet, goerli],
+  [publicProvider()]
+);
 
 const queryClient = new QueryClient();
 

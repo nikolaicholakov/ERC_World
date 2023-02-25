@@ -7,7 +7,7 @@ import { useYupValidationResolver } from "utils";
 import { editProfileSchema } from "schemas";
 import type { HTMLFormProps } from "types";
 
-export type IEditProfileForm = InferType<typeof editProfileSchema>;
+export type TEditProfileForm = InferType<typeof editProfileSchema>;
 
 export interface EditProfileFormProps extends HTMLFormProps {}
 
@@ -16,14 +16,14 @@ export const EditProfileForm = ({ ...props }: EditProfileFormProps) => {
   const [error, setError] = useState<string | null>(null);
 
   const resolver = useYupValidationResolver(editProfileSchema);
-  const form = useForm<IEditProfileForm>({
+  const form = useForm<TEditProfileForm>({
     resolver,
     defaultValues: {}
   });
 
   const { control, handleSubmit } = form;
 
-  const onSubmit: SubmitHandler<IEditProfileForm> = async ({
+  const onSubmit: SubmitHandler<TEditProfileForm> = async ({
     backgroundImage,
     bio,
     email,

@@ -2,12 +2,12 @@ import React, { RefObject, useState } from "react";
 import { HTMLDivProps } from "types";
 import * as S from "./elements";
 
-interface INftSaleInfoProps extends HTMLDivProps {
+interface NftSaleInfoProps extends HTMLDivProps {
   saleBy: "user" | "administrator";
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const NftSaleInfo: React.FC<INftSaleInfoProps> = ({ saleBy, ...props }) => {
+export const NftSaleInfo: React.FC<NftSaleInfoProps> = ({ saleBy, ...props }) => {
   const [purchasePopupOpened, setPurchasePopupOpened] = useState<boolean>(false);
   const [makeOfferPopupOpened, setMakeOfferPopupOpened] = useState<boolean>(false);
 

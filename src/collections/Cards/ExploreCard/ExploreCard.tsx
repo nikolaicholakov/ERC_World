@@ -3,11 +3,11 @@ import { IExploreNftCard } from "types";
 import * as S from "./elements";
 import "swiper/css";
 
-export interface IExploreCardProps extends IExploreNftCard {
+export interface ExploreCardProps extends IExploreNftCard {
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const ExploreCard: React.FC<IExploreCardProps> = ({
+export const ExploreCard: React.FC<ExploreCardProps> = ({
   collectionName,
   nftName,
   nftsAvailable,

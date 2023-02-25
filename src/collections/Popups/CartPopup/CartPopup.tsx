@@ -2,7 +2,7 @@ import React, { RefObject, useState } from "react";
 import { HTMLDivProps, ICartCard } from "types";
 import * as S from "./elements";
 
-interface ICartPopupProps extends HTMLDivProps {
+interface CartPopupProps extends HTMLDivProps {
   popupOpened: boolean;
   togglePopup: (state: boolean) => () => void;
   ref?: RefObject<HTMLDivElement>;
@@ -53,7 +53,7 @@ export const exampleCartItems: ICartCard[] = [
   }
 ];
 
-export const CartPopup: React.FC<ICartPopupProps> = ({ popupOpened, togglePopup, ...props }) => {
+export const CartPopup: React.FC<CartPopupProps> = ({ popupOpened, togglePopup, ...props }) => {
   return (
     <>
       <S.Popup popupOpened={popupOpened} togglePopup={togglePopup(false)} />

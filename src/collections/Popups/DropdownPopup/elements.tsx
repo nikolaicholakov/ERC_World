@@ -3,7 +3,7 @@ import _Image from "next/image";
 import {
   Button as _Button,
   CopyBlockchainAdress,
-  LoadMoreButton,
+  LoadMoreButton as _LoadMoreButton,
   Popup as _Popup,
   Typography
 } from "components";
@@ -40,4 +40,4 @@ export const ListItem = styled("li")`
 
 export const WalletAdress = styled(CopyBlockchainAdress)``;
 
-export const Button = styled(LoadMoreButton)``;
+export const DisconnectButton = styled(_LoadMoreButton)``;

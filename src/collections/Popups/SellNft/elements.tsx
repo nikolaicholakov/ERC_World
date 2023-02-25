@@ -2,7 +2,7 @@ import styled from "styled-components";
 import _Image from "next/image";
 
 import { Button as _Button, Popup as _Popup, Typography } from "components";
-import { SellNftForm } from "collections/Forms";
+import { SellNftForm as _SellNftForm } from "collections/Forms";
 
 export const Image = styled(_Image)``;
 
@@ -32,4 +32,4 @@ export const Title = styled(Typography.H4)`
   width: 100%;
 `;
 
-export const Form = styled(SellNftForm)``;
+export const SellNftForm = styled(_SellNftForm)``;

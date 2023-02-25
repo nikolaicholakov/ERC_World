@@ -1,9 +1,8 @@
-import { useWalletConnected } from "hooks";
 import React, { RefObject, useState } from "react";
 import { HTMLDivProps, IFollowerCard } from "types";
 import * as S from "./elements";
 
-interface IFollowersProps extends HTMLDivProps {
+interface FollowersProps extends HTMLDivProps {
   popupOpened: "following" | "followers" | false;
   togglePopup: (state: "following" | "followers" | false) => () => void;
   ref?: RefObject<HTMLDivElement>;
@@ -47,9 +46,7 @@ export const exampleFollowers: IFollowerCard[] = [
   }
 ];
 
-export const Followers: React.FC<IFollowersProps> = ({ popupOpened, togglePopup, ...props }) => {
-  const { setWalletConnected } = useWalletConnected();
-
+export const Followers: React.FC<FollowersProps> = ({ popupOpened, togglePopup, ...props }) => {
   return (
     <>
       <S.Popup popupOpened={popupOpened !== false} togglePopup={togglePopup(false)} />
@@ -61,7 +58,7 @@ export const Followers: React.FC<IFollowersProps> = ({ popupOpened, togglePopup,
           ))}
         </S.FollowersContainer>
         <S.ButtonsContainer>
-          <S.Button onClick={togglePopup(false)}>Close</S.Button>
+          <S.CloseButton onClick={togglePopup(false)}>Close</S.CloseButton>
         </S.ButtonsContainer>
       </S.Container>
     </>

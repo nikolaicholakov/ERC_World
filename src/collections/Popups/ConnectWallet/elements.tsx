@@ -52,7 +52,7 @@ export const ButtonsContainer = styled("div")`
   display: flex;
 `;
 
-export const Button = styled(_Button)`
+export const CancelButton = styled(_Button)`
   width: 140px;
   border: 1px solid ${({ theme }) => theme.colors.secondaryTextColor};
   color: ${({ theme }) => theme.colors.secondaryTextColor};

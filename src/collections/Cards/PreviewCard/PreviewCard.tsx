@@ -2,7 +2,7 @@ import { RefObject } from "react";
 import { HTMLDivProps } from "types";
 import * as S from "./elements";
 
-export interface IPreviewCardProps extends HTMLDivProps {
+export interface PreviewCardProps extends HTMLDivProps {
   image: string | ArrayBuffer | null;
   nftName: string;
   multiple: boolean;
@@ -10,7 +10,7 @@ export interface IPreviewCardProps extends HTMLDivProps {
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const PreviewCard: React.FC<IPreviewCardProps> = ({
+export const PreviewCard: React.FC<PreviewCardProps> = ({
   multiple,
   amountOfCopies,
   nftName,

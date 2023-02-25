@@ -2,13 +2,13 @@ import React, { RefObject, useState } from "react";
 import { HTMLDivProps } from "types";
 import * as S from "./elements";
 
-interface ICartPopupProps extends HTMLDivProps {
+interface CartPopupProps extends HTMLDivProps {
   popupOpened: boolean;
   togglePopup: (state: boolean) => () => void;
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const HamburgerMenuPopup: React.FC<ICartPopupProps> = ({
+export const HamburgerMenuPopup: React.FC<CartPopupProps> = ({
   popupOpened,
   togglePopup,
   ...props

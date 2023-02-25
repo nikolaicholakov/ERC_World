@@ -4,13 +4,13 @@ import { useConnect } from "wagmi";
 // import { connectMetaMask } from "web3";
 import * as S from "./elements";
 
-interface IConnectWalletProps extends HTMLDivProps {
+interface ConnectWalletProps extends HTMLDivProps {
   popupOpened: boolean;
   togglePopup: (state: boolean) => () => void;
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const ConnectWallet: React.FC<IConnectWalletProps> = ({
+export const ConnectWallet: React.FC<ConnectWalletProps> = ({
   popupOpened,
   togglePopup,
   ...props
@@ -33,9 +33,6 @@ export const ConnectWallet: React.FC<IConnectWalletProps> = ({
           </S.SubTitle>
         </S.TextContainer>
         <S.WalletTypesContainer>
-          {/* <S.WalletContainer onClick={connectWithMetaMask}>
-            <S.WalletType>MetaMask</S.WalletType>
-          </S.WalletContainer> */}
           {connectors.map(connector => (
             <S.WalletContainer key={connector.name} onClick={connectWallet(connector)}>
               <S.WalletType key={connector.id}>
@@ -45,15 +42,9 @@ export const ConnectWallet: React.FC<IConnectWalletProps> = ({
               </S.WalletType>
             </S.WalletContainer>
           ))}
-          {/* <S.WalletContainer>
-            <S.WalletType>Coinbase</S.WalletType>
-          </S.WalletContainer>
-          <S.WalletContainer onClick={connectwithWalletConnect}>
-            <S.WalletType>WalletConnect</S.WalletType>
-          </S.WalletContainer> */}
         </S.WalletTypesContainer>
         <S.ButtonsContainer>
-          <S.Button onClick={togglePopup(false)}>Cancel</S.Button>
+          <S.CancelButton onClick={togglePopup(false)}>Cancel</S.CancelButton>
         </S.ButtonsContainer>
       </S.Container>
     </>

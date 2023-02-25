@@ -3,12 +3,12 @@ import { ITrendingCollectionsSwiperCard } from "types";
 import * as S from "./elements";
 import "swiper/css";
 
-export interface IRecentlyListedCollectionCardProps
+export interface RecentlyListedCollectionCardProps
   extends Omit<ITrendingCollectionsSwiperCard, "volume"> {
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const RecentlyListedCollectionCard: React.FC<IRecentlyListedCollectionCardProps> = ({
+export const RecentlyListedCollectionCard: React.FC<RecentlyListedCollectionCardProps> = ({
   floor,
   name,
   image,

@@ -1,13 +1,13 @@
 import { RefObject } from "react";
-import { IExploreNftCard, IOnSaleCard } from "types";
+import { IOnSaleCard } from "types";
 import * as S from "./elements";
 import "swiper/css";
 
-export interface IOnSaleCardProps extends IOnSaleCard {
+export interface OnSaleCardProps extends IOnSaleCard {
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const OnSaleCard: React.FC<IOnSaleCardProps> = ({
+export const OnSaleCard: React.FC<OnSaleCardProps> = ({
   collectionName,
   nftName,
   price,

@@ -7,7 +7,7 @@ import { useYupValidationResolver } from "utils";
 import { auctionSellNftSchema } from "schemas";
 import type { HTMLFormProps } from "types";
 
-export type IAuctionSellNftForm = InferType<typeof auctionSellNftSchema>;
+export type TAuctionSellNftForm = InferType<typeof auctionSellNftSchema>;
 
 export interface AuctionSellNftFormProps extends HTMLFormProps {
   togglePopup: (state: boolean) => () => void;
@@ -18,7 +18,7 @@ export const AuctionSellNftForm = ({ togglePopup, ...props }: AuctionSellNftForm
   const [error, setError] = useState<string | null>(null);
 
   const resolver = useYupValidationResolver(auctionSellNftSchema);
-  const form = useForm<IAuctionSellNftForm>({
+  const form = useForm<TAuctionSellNftForm>({
     resolver,
     defaultValues: {
       duration: 0,
@@ -28,7 +28,7 @@ export const AuctionSellNftForm = ({ togglePopup, ...props }: AuctionSellNftForm
 
   const { control, handleSubmit } = form;
 
-  const onSubmit: SubmitHandler<IAuctionSellNftForm> = async ({
+  const onSubmit: SubmitHandler<TAuctionSellNftForm> = async ({
     startPrice,
     buyNowPrice,
     duration,

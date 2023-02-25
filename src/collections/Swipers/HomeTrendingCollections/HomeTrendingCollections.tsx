@@ -9,14 +9,14 @@ import "swiper/css/pagination";
 
 import { Swiper as TSwiper, SwiperOptions } from "swiper/types";
 
-export interface IHomeTrendingCollectionsSwiper {
+export interface HomeTrendingCollectionsSwiper {
   swiperCards: ITrendingCollectionsSwiperCard[];
   loadMoreCollections: () => void;
   isLoading: boolean;
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const HomeTrendingCollectionsSwiper: React.FC<IHomeTrendingCollectionsSwiper> = ({
+export const HomeTrendingCollectionsSwiper: React.FC<HomeTrendingCollectionsSwiper> = ({
   swiperCards,
   isLoading,
   loadMoreCollections,

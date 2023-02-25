@@ -35,7 +35,7 @@ const Errors = {
   }
 };
 
-for (let i = 0; i < 30; i++) {
+for (let i = 0; i < 50; i++) {
   dummyCollection.push({
     image: { src: `/imgs/nft${getNumber1to3()}.png`, width: 120, height: 120 },
     name: `Collection Name #${getNumber1to3()}`,

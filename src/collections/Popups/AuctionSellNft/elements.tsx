@@ -2,7 +2,7 @@ import styled from "styled-components";
 import _Image from "next/image";
 
 import { Button as _Button, Popup as _Popup, Typography } from "components";
-import { AuctionSellNftForm } from "collections/Forms";
+import { AuctionSellNftForm as _AuctionSellNftForm} from "collections/Forms";
 
 export const Image = styled(_Image)``;
 
@@ -29,4 +29,4 @@ export const Container = styled("div")`
   }
 `;
 
-export const Form = styled(AuctionSellNftForm)``;
+export const AuctionSellNftForm = styled(_AuctionSellNftForm)``;

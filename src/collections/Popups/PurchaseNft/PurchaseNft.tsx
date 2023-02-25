@@ -2,17 +2,13 @@ import React, { RefObject, useState } from "react";
 import { HTMLDivProps } from "types";
 import * as S from "./elements";
 
-interface IPurchaseNftProps extends HTMLDivProps {
+interface PurchaseNftProps extends HTMLDivProps {
   popupOpened: boolean;
   togglePopup: (state: boolean) => () => void;
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const PurchaseNft: React.FC<IPurchaseNftProps> = ({
-  popupOpened,
-  togglePopup,
-  ...props
-}) => {
+export const PurchaseNft: React.FC<PurchaseNftProps> = ({ popupOpened, togglePopup, ...props }) => {
   const [purchaseSubmited, setPurchaseSubmited] = useState<boolean>(false);
 
   const submitPurchase = () => {
@@ -24,7 +20,7 @@ export const PurchaseNft: React.FC<IPurchaseNftProps> = ({
       <S.Popup popupOpened={popupOpened} togglePopup={togglePopup(false)} />
       <S.Container {...props}>
         {purchaseSubmited ? (
-          <S.PurchaseSubmited togglePopup={togglePopup} />
+          <S.PurchaseSubmitedPopup togglePopup={togglePopup} />
         ) : (
           <S.NotSubmitedContainer>
             <S.NftInfoContainer>
@@ -45,7 +41,7 @@ export const PurchaseNft: React.FC<IPurchaseNftProps> = ({
               <S.CryptoBalance>20 MATIC</S.CryptoBalance>
             </S.BalanceContainer>
             <S.ButtonsContainer>
-              <S.Button onClick={togglePopup(false)}>Cancel</S.Button>
+              <S.CancelButton onClick={togglePopup(false)}>Cancel</S.CancelButton>
               <S.BuyNowButton onClick={submitPurchase}>Buy Now</S.BuyNowButton>
             </S.ButtonsContainer>
           </S.NotSubmitedContainer>

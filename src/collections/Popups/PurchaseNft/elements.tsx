@@ -38,7 +38,7 @@ export const NotSubmitedContainer = styled("div")`
   }
 `;
 
-export const PurchaseSubmited = styled(SuccessfulPurchase)`
+export const PurchaseSubmitedPopup = styled(SuccessfulPurchase)`
   padding: 40px;
 `;
 
@@ -100,7 +100,7 @@ export const ButtonsContainer = styled("div")`
   display: flex;
 `;
 
-export const Button = styled(_Button)`
+export const CancelButton = styled(_Button)`
   width: 125px;
   height: 40px;
   padding: 0px;

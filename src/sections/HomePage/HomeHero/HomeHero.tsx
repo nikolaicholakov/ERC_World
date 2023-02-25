@@ -2,7 +2,7 @@ import React, { RefObject } from "react";
 import { IHomeHeroSwiperCard } from "types";
 import * as S from "./elements";
 
-interface IHomeHeroProps {
+interface HomeHeroProps {
   ref?: RefObject<HTMLDivElement>;
 }
 
@@ -27,7 +27,7 @@ const swiperCards: IHomeHeroSwiperCard[] = [
   }
 ];
 
-export const HomeHero: React.FC<IHomeHeroProps> = ({ ...props }) => {
+export const HomeHero: React.FC<HomeHeroProps> = ({ ...props }) => {
   return (
     <S.Container {...props}>
       <S.Swiper swiperCards={swiperCards} />

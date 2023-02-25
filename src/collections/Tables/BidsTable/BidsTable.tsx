@@ -2,12 +2,12 @@ import { RefObject } from "react";
 import { IBidsTableRow } from "types";
 import * as S from "./elements";
 
-export interface IBidsTableProps {
+export interface BidsTableProps {
   tableData: IBidsTableRow[];
   ref?: RefObject<HTMLTableElement>;
 }
 
-export const BidsTable: React.FC<IBidsTableProps> = ({ tableData, ...props }) => (
+export const BidsTable: React.FC<BidsTableProps> = ({ tableData, ...props }) => (
   <S.HistoryTable {...props}>
     <S.HistoryTableHead>
       <S.HistoryTableHeaderRow>

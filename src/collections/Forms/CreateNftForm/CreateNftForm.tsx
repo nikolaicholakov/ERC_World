@@ -7,11 +7,11 @@ import { useYupValidationResolver } from "utils";
 import { createNftSchema } from "schemas";
 import type { HTMLFormProps } from "types";
 
-export type ICreateNftFormValues = InferType<typeof createNftSchema>;
+export type TCreateNftFormValues = InferType<typeof createNftSchema>;
 
-export interface ICreateNftFormProps extends HTMLFormProps {}
+export interface CreateNftFormProps extends HTMLFormProps {}
 
-const exampleCollections: any = [
+const exampleCollections: string[] = [
   "Collection Name #1",
   "Collection Name #2",
   "Collection Name #3",
@@ -21,7 +21,7 @@ const exampleCollections: any = [
   "Collection Name #8"
 ];
 
-export const CreateNftForm = ({ ...props }: ICreateNftFormProps) => {
+export const CreateNftForm = ({ ...props }: CreateNftFormProps) => {
   const [successfulSubmit, setSuccessfulSubmit] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -32,7 +32,7 @@ export const CreateNftForm = ({ ...props }: ICreateNftFormProps) => {
   };
 
   const resolver = useYupValidationResolver(createNftSchema);
-  const form = useForm<ICreateNftFormValues>({
+  const form = useForm<TCreateNftFormValues>({
     resolver,
     defaultValues: {}
   });
@@ -43,7 +43,7 @@ export const CreateNftForm = ({ ...props }: ICreateNftFormProps) => {
   const watchNftName = watch("nftName", "");
   const watchAmountOfCopies = watch("amountOfCopies", 0);
 
-  const onSubmit: SubmitHandler<ICreateNftFormValues> = async ({
+  const onSubmit: SubmitHandler<TCreateNftFormValues> = async ({
     description,
     image,
     amountToSell,

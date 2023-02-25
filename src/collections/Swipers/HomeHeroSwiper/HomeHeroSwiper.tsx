@@ -1,7 +1,7 @@
 import React, { useRef, useState, RefObject, useEffect } from "react";
 import { IHomeHeroSwiperCard } from "types";
 import * as S from "./elements";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
 
 import "swiper/css";
@@ -9,12 +9,12 @@ import "swiper/css/pagination";
 
 import { Swiper as TSwiper, SwiperOptions } from "swiper/types";
 
-export interface IHomeHeroSwiper {
+export interface HomeHeroSwiper {
   swiperCards: IHomeHeroSwiperCard[];
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const HomeHeroSwiper: React.FC<IHomeHeroSwiper> = ({ swiperCards, ...props }) => {
+export const HomeHeroSwiper: React.FC<HomeHeroSwiper> = ({ swiperCards, ...props }) => {
   const [swiper, setSwiper] = useState<TSwiper | null>(null);
 
   const swiperSettings: SwiperOptions = {

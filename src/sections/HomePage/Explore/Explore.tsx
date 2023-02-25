@@ -3,11 +3,11 @@ import React, { RefObject, useEffect, useState } from "react";
 import { IExploreNftCard } from "types";
 import * as S from "./elements";
 
-interface IExploreProps {
+interface ExploreProps {
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const Explore: React.FC<IExploreProps> = ({ ...props }) => {
+export const Explore: React.FC<ExploreProps> = ({ ...props }) => {
   const [exploreCollections, setExploreCollections] = useState<IExploreNftCard[]>([]);
 
   const query = useQueries();

@@ -5,10 +5,10 @@ import * as S from "./elements";
 import { useQueries } from "hooks";
 import { AxiosError } from "axios";
 
-interface ITrendingCollectionsProps {
+interface TrendingCollectionsProps {
   ref?: RefObject<HTMLDivElement>;
 }
-export const TrendingCollections: React.FC<ITrendingCollectionsProps> = ({ ...props }) => {
+export const TrendingCollections: React.FC<TrendingCollectionsProps> = ({ ...props }) => {
   const [trendingCollectionCards, setTrendingCollectionCards] = useState<
     ITrendingCollectionsSwiperCard[]
   >([]);

@@ -49,7 +49,7 @@ export const ButtonsContainer = styled("div")`
   display: flex;
 `;
 
-export const Button = styled(_Button)`
+export const CloseButton = styled(_Button)`
   width: 125px;
   height: 40px;
   padding: 0;

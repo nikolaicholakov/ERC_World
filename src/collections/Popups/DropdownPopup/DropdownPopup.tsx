@@ -1,17 +1,15 @@
-import { Web3Button } from "@web3modal/react";
-import { useWalletConnected } from "hooks";
 import React, { RefObject, useEffect, useState } from "react";
 import { HTMLDivProps, ICartCard } from "types";
 import { useAccount, useBalance, useDisconnect } from "wagmi";
 import * as S from "./elements";
 
-interface IDropdownPopupProps extends HTMLDivProps {
+interface DropdownPopupProps extends HTMLDivProps {
   popupOpened: boolean;
   togglePopup: (state: boolean) => () => void;
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const DropdownPopup: React.FC<IDropdownPopupProps> = ({
+export const DropdownPopup: React.FC<DropdownPopupProps> = ({
   popupOpened,
   togglePopup,
   ...props
@@ -35,7 +33,7 @@ export const DropdownPopup: React.FC<IDropdownPopupProps> = ({
           </S.ListItem>
           <S.ListItem>ETH Balance: {data?.formatted}</S.ListItem>
           <S.ListItem>
-            <S.Button onClick={disconnectWallet}>Disoconnect</S.Button>
+            <S.DisconnectButton onClick={disconnectWallet}>Disoconnect</S.DisconnectButton>
           </S.ListItem>
         </S.List>
       </S.Container>

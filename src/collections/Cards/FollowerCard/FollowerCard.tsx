@@ -3,11 +3,11 @@ import { IFollowerCard } from "types";
 import * as S from "./elements";
 import "swiper/css";
 
-export interface IFollowerCardProps extends IFollowerCard {
+export interface FollowerCardProps extends IFollowerCard {
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const FollowerCard: React.FC<IFollowerCardProps> = ({
+export const FollowerCard: React.FC<FollowerCardProps> = ({
   image,
   name,
   relationship,

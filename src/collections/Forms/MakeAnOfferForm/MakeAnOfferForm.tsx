@@ -7,14 +7,14 @@ import { makeAnOfferSchema } from "schemas";
 import { InferType } from "yup";
 import { useYupValidationResolver } from "utils";
 
-export type MakeAnOfferFormValues = InferType<typeof makeAnOfferSchema>;
+export type TMakeAnOfferFormValues = InferType<typeof makeAnOfferSchema>;
 
-export interface IMakeAnOfferFormProps extends HTMLFormProps {
+export interface MakeAnOfferFormProps extends HTMLFormProps {
   popupOpened: boolean;
   togglePopup: (state: boolean) => () => void;
 }
 
-export const MakeAnOfferForm = ({ popupOpened, togglePopup, ...props }: IMakeAnOfferFormProps) => {
+export const MakeAnOfferForm = ({ popupOpened, togglePopup, ...props }: MakeAnOfferFormProps) => {
   const [error, setError] = useState<string | null>(null);
   const [purchaseSubmited, setPurchaseSubmited] = useState<boolean>(false);
 
@@ -23,13 +23,13 @@ export const MakeAnOfferForm = ({ popupOpened, togglePopup, ...props }: IMakeAnO
   };
 
   const resolver = useYupValidationResolver(makeAnOfferSchema);
-  const form = useForm<MakeAnOfferFormValues>({
+  const form = useForm<TMakeAnOfferFormValues>({
     resolver
   });
 
   const { control, handleSubmit } = form;
 
-  const onSubmit: SubmitHandler<MakeAnOfferFormValues> = async ({ offerPrice }) => {
+  const onSubmit: SubmitHandler<TMakeAnOfferFormValues> = async ({ offerPrice }) => {
     try {
       console.log(offerPrice);
       togglePopup(false)();

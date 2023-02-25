@@ -4,11 +4,13 @@ import React, { RefObject, useEffect, useState } from "react";
 import { ITrendingCollectionsSwiperCard } from "types";
 import * as S from "./elements";
 
-interface ITrendingCollectionsProps {
+interface RecentlyListedCollectionsProps {
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const RecentlyListedCollections: React.FC<ITrendingCollectionsProps> = ({ ...props }) => {
+export const RecentlyListedCollections: React.FC<RecentlyListedCollectionsProps> = ({
+  ...props
+}) => {
   const [recentlyListedCollectionCards, setRecentlyListedCollectionCards] = useState<
     Omit<ITrendingCollectionsSwiperCard, "volume">[]
   >([]);
@@ -39,7 +41,15 @@ export const RecentlyListedCollections: React.FC<ITrendingCollectionsProps> = ({
       ) {
         return;
       } else {
-        setRecentlyListedCollectionCards(oldCollection => [...oldCollection, ...data]);
+        console.log("data", data.length, "collection", recentlyListedCollectionCards.length);
+        if (data.length - 1 + startIndex === recentlyListedCollectionCards.length) {
+          setRecentlyListedCollectionCards(oldCollection => [
+            ...oldCollection,
+            data[data.length - 1]
+          ]);
+        } else {
+          setRecentlyListedCollectionCards(oldCollection => [...oldCollection, ...data]);
+        }
       }
     } else {
       if (recentlyListedCollectionCards.length === 0) {
@@ -59,27 +69,27 @@ export const RecentlyListedCollections: React.FC<ITrendingCollectionsProps> = ({
   }, [error]);
 
   // testing
-  // const post = query.POST.collections.recentlyListed();
+  const post = query.POST.collections.recentlyListed();
 
-  // const mutateTest = () => {
-  //   post.mutate(
-  //     {
-  //       image: { src: `/imgs/nft1.png`, width: 120, height: 120 },
-  //       name: `Collection Name #2`,
-  //       floor: 100
-  //     },
-  //     {
-  //       onError: (error: AxiosError) => {
-  //         setMutationError(error);
-  //       },
-  //       onSuccess: () => refetch()
-  //     }
-  //   );
-  // };
+  const mutateTest = () => {
+    post.mutate(
+      {
+        image: { src: `/imgs/nft1.png`, width: 120, height: 120 },
+        name: `Collection Name #2`,
+        floor: 100
+      },
+      {
+        onError: (error: AxiosError) => {
+          setMutationError(error);
+        },
+        onSuccess: () => refetch()
+      }
+    );
+  };
 
   return (
     <S.Container {...props}>
-      <S.SectionHeading>Recently Listed Collections</S.SectionHeading>
+      <S.SectionHeading onClick={mutateTest}>Recently Listed Collections</S.SectionHeading>
       <S.Wrapper>
         <S.CardsContainer>
           {recentlyListedCollectionCards.length === 0 ? (

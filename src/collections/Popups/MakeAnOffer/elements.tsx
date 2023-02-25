@@ -2,7 +2,7 @@ import styled from "styled-components";
 import _Image from "next/image";
 
 import { Button as _Button, Popup as _Popup, Typography } from "components";
-import { MakeAnOfferForm } from "collections/Forms";
+import { MakeAnOfferForm as _MakeAnOfferForm } from "collections/Forms";
 
 export const Image = styled(_Image)``;
 
@@ -42,4 +42,4 @@ export const Container = styled("div")`
   }
 `;
 
-export const Form = styled(MakeAnOfferForm)``;
+export const MakeAnOfferForm = styled(_MakeAnOfferForm)``;

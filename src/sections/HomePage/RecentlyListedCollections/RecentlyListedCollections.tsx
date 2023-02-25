@@ -91,7 +91,7 @@ export const RecentlyListedCollections: React.FC<RecentlyListedCollectionsProps>
 
   return (
     <S.Container {...props}>
-      <button onClick={mutateTest}>add a new card</button>
+      {/* <button onClick={mutateTest}>add a new card</button> */}
       <S.SectionHeading>Recently Listed Collections</S.SectionHeading>
       <S.Wrapper>
         <S.CardsContainer>

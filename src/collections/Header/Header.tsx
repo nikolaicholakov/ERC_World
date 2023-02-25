@@ -70,7 +70,7 @@ export const Header = ({ ...props }: HeaderProps) => {
         </S.LeftSide>
         {address ? (
           <S.Connected>
-            <S.CreateNftButton onClick={() => sendTransaction?.()}>Sent Eth</S.CreateNftButton>
+            {/* <S.CreateNftButton onClick={() => sendTransaction?.()}>Sent Eth</S.CreateNftButton> */}
             <S.CartButton onClick={toggleCartPopup(true)} />
             {cartPopupOpened && (
               <S.CartPopup togglePopup={toggleCartPopup} popupOpened={cartPopupOpened} />

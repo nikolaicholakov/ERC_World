@@ -1,10 +1,10 @@
 import React, { RefObject } from "react";
 import * as S from "./elements";
 
-interface ITableSpacingRowProps {
+interface TableSpacingRowProps {
   ref?: RefObject<HTMLTableRowElement>;
 }
 
-export const TableSpacingRow: React.FC<ITableSpacingRowProps> = ({ ...props }) => {
+export const TableSpacingRow: React.FC<TableSpacingRowProps> = ({ ...props }) => {
   return <S.SpacingRow {...props} />;
 };

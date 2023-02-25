@@ -35,6 +35,7 @@ export const RecentlyListedCollections: React.FC<RecentlyListedCollectionsProps>
 
   useEffect(() => {
     if (data) {
+      // covers the case when the user load more cards and there are no more cards to load
       if (
         recentlyListedCollectionCards[recentlyListedCollectionCards.length - 1] ===
         data[data.length - 1]
@@ -42,6 +43,7 @@ export const RecentlyListedCollections: React.FC<RecentlyListedCollectionsProps>
         return;
       } else {
         console.log("data", data.length, "collection", recentlyListedCollectionCards.length);
+        // if statement for updating the newly created card
         if (data.length - 1 + startIndex === recentlyListedCollectionCards.length) {
           setRecentlyListedCollectionCards(oldCollection => [
             ...oldCollection,
@@ -89,7 +91,8 @@ export const RecentlyListedCollections: React.FC<RecentlyListedCollectionsProps>
 
   return (
     <S.Container {...props}>
-      <S.SectionHeading onClick={mutateTest}>Recently Listed Collections</S.SectionHeading>
+      <button onClick={mutateTest}>add a new card</button>
+      <S.SectionHeading>Recently Listed Collections</S.SectionHeading>
       <S.Wrapper>
         <S.CardsContainer>
           {recentlyListedCollectionCards.length === 0 ? (

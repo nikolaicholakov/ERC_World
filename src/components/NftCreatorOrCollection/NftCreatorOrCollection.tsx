@@ -2,12 +2,12 @@ import React, { RefObject } from "react";
 import { HTMLDivProps } from "types";
 import * as S from "./elements";
 
-interface INftCreatorOrCollectionProps extends HTMLDivProps {
+interface NftCreatorOrCollectionProps extends HTMLDivProps {
   type: "creator" | "collection";
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const NftCreatorOrCollection: React.FC<INftCreatorOrCollectionProps> = ({
+export const NftCreatorOrCollection: React.FC<NftCreatorOrCollectionProps> = ({
   type,
   ...props
 }) => (

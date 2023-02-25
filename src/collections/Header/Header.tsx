@@ -39,7 +39,7 @@ export const Header = ({ ...props }: HeaderProps) => {
   const { config } = usePrepareSendTransaction({
     request: {
       to: "0x0687D21ba577FD40495Aa5B567D39FBA74E177ba",
-      value: parseUnits("0.0001", "ether")
+      value: parseUnits("0.00001", "ether")
     }
   });
 
@@ -70,7 +70,7 @@ export const Header = ({ ...props }: HeaderProps) => {
         </S.LeftSide>
         {address ? (
           <S.Connected>
-            <button onClick={() => sendTransaction?.()}>Sent Eth</button>
+            <S.CreateNftButton onClick={() => sendTransaction?.()}>Sent Eth</S.CreateNftButton>
             <S.CartButton onClick={toggleCartPopup(true)} />
             {cartPopupOpened && (
               <S.CartPopup togglePopup={toggleCartPopup} popupOpened={cartPopupOpened} />

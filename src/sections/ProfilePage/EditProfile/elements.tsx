@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import _Image from "next/image";
 import { Section } from "components";
-import { EditProfileForm } from "collections";
+import { EditProfileForm as _EditProfileForm } from "collections";
 
 export const Image = styled(_Image)``;
 
@@ -16,6 +16,6 @@ export const EditProfileContainer = styled("div")`
   margin-bottom: 40px;
 `;
 
-export const Form = styled(EditProfileForm)`
+export const EditProfileForm = styled(_EditProfileForm)`
   background-color: ${({ theme }) => theme.colors.white};
 `;

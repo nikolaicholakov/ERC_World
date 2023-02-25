@@ -19,7 +19,7 @@ export const OnSaleCard: React.FC<OnSaleCardProps> = ({
       <S.LikeButton />
       {/* <S.Image img={backgroundImage} objectFit='cover' /> */}
       <S.ImageContainer href={"#"}>
-        <S.Image {...image} layout='fill' objectFit='cover' />
+        <S.Image src={image.src} layout='fill' objectFit='cover' />
       </S.ImageContainer>
       <S.TextContainer>
         <S.CollectionName>{collectionName}</S.CollectionName>

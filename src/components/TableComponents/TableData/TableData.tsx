@@ -1,10 +1,10 @@
 import React, { RefObject } from "react";
 import * as S from "./elements";
 
-interface ITableDataProps {
+interface TableDataProps {
   ref?: RefObject<HTMLTableCellElement>;
 }
 
-export const TableData: React.FC<ITableDataProps> = ({ ...props }) => {
+export const TableData: React.FC<TableDataProps> = ({ ...props }) => {
   return <S.TableData {...props} />;
 };

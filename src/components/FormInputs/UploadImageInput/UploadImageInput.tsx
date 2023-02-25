@@ -1,5 +1,5 @@
-import { ForwardedRef, useEffect, useState } from "react";
-import { useController, UseControllerProps, FieldValues, useFormContext } from "react-hook-form";
+import { ForwardedRef, } from "react";
+import { useController, UseControllerProps, FieldValues,  } from "react-hook-form";
 import type { KeyOfType, HTMLInputProps } from "types";
 import * as S from "./elements";
 

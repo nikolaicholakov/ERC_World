@@ -1,10 +1,10 @@
 import { NextPage } from "next";
-import { CreateNftHero } from "sections";
+import { CreateNftPage } from "views";
 
 const CreateNft: NextPage = () => {
   return (
     <main>
-      <CreateNftHero />
+      <CreateNftPage />
     </main>
   );
 };

@@ -2,11 +2,11 @@ import React, { RefObject } from "react";
 import { HTMLDivProps } from "types";
 import * as S from "./elements";
 
-interface INftSellerProps extends HTMLDivProps {
+interface NftSellerProps extends HTMLDivProps {
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const NftSeller: React.FC<INftSellerProps> = ({ ...props }) => (
+export const NftSeller: React.FC<NftSellerProps> = ({ ...props }) => (
   <S.Container {...props}>
     <S.ImgContainer>
       <S.Image src={"/imgs/user1.png"} layout='fill' />

@@ -2,11 +2,11 @@ import React, { RefObject, useState } from "react";
 import { HTMLSectionProps } from "types";
 import * as S from "./elements";
 
-interface IProfileHeroProps extends HTMLSectionProps {
+interface ProfileHeroProps extends HTMLSectionProps {
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const ProfileHero: React.FC<IProfileHeroProps> = ({ ...props }) => {
+export const ProfileHero: React.FC<ProfileHeroProps> = ({ ...props }) => {
   const [checkFollowersPopupOpened, setCheckedFollowersPopupOpened] = useState<
     "following" | "followers" | false
   >(false);
@@ -19,7 +19,7 @@ export const ProfileHero: React.FC<IProfileHeroProps> = ({ ...props }) => {
   return (
     <S.Container {...props}>
       <S.ProfileBackgroundImage>
-        <S.Image src={"/imgs/userBg.png"} layout='fill' objectFit='cover' />
+        <S.Image src={"/imgs/userBg.png"} layout='fill' objectFit='cover' priority />
       </S.ProfileBackgroundImage>
       <S.ProfileInformationContainer>
         <S.ProfileImg>

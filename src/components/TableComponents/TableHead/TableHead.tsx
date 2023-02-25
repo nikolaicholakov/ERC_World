@@ -1,10 +1,10 @@
 import React, { RefObject } from "react";
 import * as S from "./elements";
 
-interface ITableHeadProps {
+interface TableHeadProps {
   ref?: RefObject<HTMLTableSectionElement>;
 }
 
-export const TableHead: React.FC<ITableHeadProps> = ({ ...props }) => {
+export const TableHead: React.FC<TableHeadProps> = ({ ...props }) => {
   return <S.TableHead {...props} />;
 };

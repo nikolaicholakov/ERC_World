@@ -3,7 +3,7 @@ import React, { RefObject, useState } from "react";
 import { HTMLSectionProps, IOnSaleCard } from "types";
 import * as S from "./elements";
 
-interface INftTypesProps extends HTMLSectionProps {
+interface NftTypesProps extends HTMLSectionProps {
   ref?: RefObject<HTMLDivElement>;
 }
 
@@ -91,7 +91,7 @@ export type TCurrentTab =
   | "purchases"
   | "favorites";
 
-export const NftTypes: React.FC<INftTypesProps> = ({ ...props }) => {
+export const NftTypes: React.FC<NftTypesProps> = ({ ...props }) => {
   const [currentTab, setCurrentTab] = useState<TCurrentTab>("onSale");
 
   const handleChangeTab = (tab: TCurrentTab) => () => {

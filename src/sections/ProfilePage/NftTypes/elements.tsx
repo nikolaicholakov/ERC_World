@@ -41,7 +41,7 @@ export const Text = styled("span")`
   display: inline-block;
 `;
 
-export const Type = styled(Typography.H4)<{ active: boolean }>`
+export const Type = styled(Typography.H4)<{ active: boolean | undefined }>`
   font-weight: 500;
   flex-basis: calc(100% / 7);
   width: 100%;

@@ -1,10 +1,10 @@
 import { NextPage } from "next";
-import { SalesHero } from "sections";
+import { SalesPage } from "views";
 
 const Sale: NextPage = () => {
   return (
     <main>
-      <SalesHero />
+      <SalesPage />
     </main>
   );
 };

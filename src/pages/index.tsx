@@ -1,13 +1,10 @@
 import { GetStaticProps, NextPage } from "next";
-import { Explore, HomeHero, RecentlyListedCollections, TrendingCollections } from "sections";
+import { HomePage } from "views";
 
 const Home: NextPage = () => {
   return (
     <main>
-      <HomeHero />
-      <TrendingCollections />
-      <RecentlyListedCollections />
-      <Explore />
+      <HomePage />
     </main>
   );
 };

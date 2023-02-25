@@ -2,11 +2,11 @@ import * as S from "./elements";
 import { RefObject, useState } from "react";
 import type { HTMLButtonProps } from "types";
 
-export interface ICartButtonProps extends HTMLButtonProps {
+export interface CartButtonProps extends HTMLButtonProps {
   ref?: RefObject<HTMLButtonElement>;
 }
 
-export const CartButton: React.FC<ICartButtonProps> = ({ ...props }) => {
+export const CartButton: React.FC<CartButtonProps> = ({ ...props }) => {
   const [itemsInCart, setItemsInCart] = useState<number>(10);
 
   return (

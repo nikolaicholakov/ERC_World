@@ -24,7 +24,7 @@ export const Icon = styled(FontAwesomeIcon)`
   color: ${({ theme }) => theme.colors.sectionHeadersColor};
 `;
 
-export const ItemsInCart = styled("div")`
+export const ItemsInCart = styled("span")`
   width: 18px;
   height: 18px;
   border-radius: 10px;

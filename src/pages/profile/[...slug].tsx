@@ -1,11 +1,10 @@
 import { NextPage } from "next";
-import { NftTypes, ProfileHero } from "sections";
+import { ProfilePage } from "views";
 
 const Profile: NextPage = () => {
   return (
     <main>
-      <ProfileHero />
-      <NftTypes />
+      <ProfilePage />
     </main>
   );
 };

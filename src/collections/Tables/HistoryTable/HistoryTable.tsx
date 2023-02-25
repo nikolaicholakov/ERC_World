@@ -2,12 +2,12 @@ import { RefObject } from "react";
 import { IHistoryTableRow } from "types";
 import * as S from "./elements";
 
-export interface IHistoryTableProps {
+export interface HistoryTableProps {
   tableData: IHistoryTableRow[];
   ref?: RefObject<HTMLTableElement>;
 }
 
-export const HistoryTable: React.FC<IHistoryTableProps> = ({ tableData, ...props }) => (
+export const HistoryTable: React.FC<HistoryTableProps> = ({ tableData, ...props }) => (
   <S.HistoryTable {...props}>
     <S.HistoryTableHead>
       <S.HistoryTableHeaderRow>

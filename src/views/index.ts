@@ -1,1 +1,5 @@
-export * from "./HomePage";
+export * from './HomePage'
+export * from './SalesPage'
+export * from './EditProfilePage'
+export * from './ProfilePage'
+export * from './CreateNftPage'

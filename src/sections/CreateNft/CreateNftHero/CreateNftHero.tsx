@@ -2,11 +2,11 @@ import React, { RefObject } from "react";
 import { HTMLAnchorProps, HTMLDivProps } from "types";
 import * as S from "./elements";
 
-interface ICreateNftHeroProps extends HTMLDivProps {
+interface CreateNftHeroProps extends HTMLDivProps {
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const CreateNftHero: React.FC<ICreateNftHeroProps> = ({ ...props }) => (
+export const CreateNftHero: React.FC<CreateNftHeroProps> = ({ ...props }) => (
   <S.SectionContainer {...props}>
     <S.EditProfileContainer>
       <S.Form />

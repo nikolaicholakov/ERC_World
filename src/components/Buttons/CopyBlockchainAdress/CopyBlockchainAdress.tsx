@@ -3,11 +3,11 @@ import { RefObject, useState } from "react";
 import type { HTMLButtonProps } from "types";
 import { useAccount } from "wagmi";
 
-export interface ICopyBlockchainAdressProps extends HTMLButtonProps {
+export interface CopyBlockchainAdressProps extends HTMLButtonProps {
   ref?: RefObject<HTMLButtonElement>;
 }
 
-export const CopyBlockchainAdress: React.FC<ICopyBlockchainAdressProps> = ({ ...props }) => {
+export const CopyBlockchainAdress: React.FC<CopyBlockchainAdressProps> = ({ ...props }) => {
   const { address } = useAccount();
 
   const shortenAddress = (address: string) => {

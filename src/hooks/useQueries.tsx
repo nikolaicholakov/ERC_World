@@ -32,7 +32,6 @@ const useTrendingCollections = (startIndex: number, lastIndex: number) => {
 
 const useRecentlyListedCollections = (startIndex: number, lastIndex: number) => {
   return useQuery<Omit<ITrendingCollectionsSwiperCard, "volume">[], AxiosError>({
-    // queryKey: ["recentlyListedCollections", startIndex, lastIndex],
     queryKey: ["recentlyListedCollections", startIndex, lastIndex],
     queryFn: async () => {
       const { data } = await axios.get(

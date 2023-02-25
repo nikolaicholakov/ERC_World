@@ -2,12 +2,12 @@ import * as S from "./elements";
 import { RefObject } from "react";
 import type { HTMLButtonProps } from "types";
 
-export interface IHamburgerMenuButtonProps extends HTMLButtonProps {
+export interface HamburgerMenuButtonProps extends HTMLButtonProps {
   menuOpened: boolean;
   ref?: RefObject<HTMLButtonElement>;
 }
 
-export const HamburgerMenuButton: React.FC<IHamburgerMenuButtonProps> = ({
+export const HamburgerMenuButton: React.FC<HamburgerMenuButtonProps> = ({
   menuOpened,
   ...props
 }) => {

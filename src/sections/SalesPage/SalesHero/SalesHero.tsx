@@ -2,7 +2,7 @@ import React, { RefObject, useState } from "react";
 import { IBidsTableRow, IHistoryTableRow } from "types";
 import * as S from "./elements";
 
-interface ISalesHeroProps {
+interface SalesHeroProps {
   ref?: RefObject<HTMLDivElement>;
 }
 
@@ -60,7 +60,7 @@ const exampleBidsTable: IBidsTableRow[] = [
   }
 ];
 
-export const SalesHero: React.FC<ISalesHeroProps> = ({ ...props }) => {
+export const SalesHero: React.FC<SalesHeroProps> = ({ ...props }) => {
   const [saleBy, setSaleBy] = useState<"user" | "administrator">("user");
 
   return (

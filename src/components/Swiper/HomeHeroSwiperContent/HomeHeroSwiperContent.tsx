@@ -3,11 +3,11 @@ import { IHomeHeroSwiperCard } from "types";
 import * as S from "./elements";
 import "swiper/css";
 
-export interface IHomeHeroSwiperContentProps extends IHomeHeroSwiperCard {
+export interface HomeHeroSwiperContentProps extends IHomeHeroSwiperCard {
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const HomeHeroSwiperContent: React.FC<IHomeHeroSwiperContentProps> = ({
+export const HomeHeroSwiperContent: React.FC<HomeHeroSwiperContentProps> = ({
   image,
   subTitle,
   title,

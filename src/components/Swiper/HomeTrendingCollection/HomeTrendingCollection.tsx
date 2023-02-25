@@ -3,11 +3,11 @@ import { ITrendingCollectionsSwiperCard } from "types";
 import * as S from "./elements";
 import "swiper/css";
 
-export interface IHomeTrendingCollectionProps extends ITrendingCollectionsSwiperCard {
+export interface HomeTrendingCollectionProps extends ITrendingCollectionsSwiperCard {
   ref?: RefObject<HTMLAnchorElement>;
 }
 
-export const HomeTrendingCollection: React.FC<IHomeTrendingCollectionProps> = ({
+export const HomeTrendingCollection: React.FC<HomeTrendingCollectionProps> = ({
   image,
   floor,
   name,

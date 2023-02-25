@@ -2,11 +2,11 @@ import * as S from "./elements";
 import { RefObject, useState } from "react";
 import type { HTMLButtonProps } from "types";
 
-export interface ILikeButtonProps extends HTMLButtonProps {
+export interface LikeButtonProps extends HTMLButtonProps {
   ref?: RefObject<HTMLButtonElement>;
 }
 
-export const LikeButton: React.FC<ILikeButtonProps> = ({ children, ...props }) => {
+export const LikeButton: React.FC<LikeButtonProps> = ({ children, ...props }) => {
   const [liked, setLiked] = useState<boolean>(false);
 
   const toggleLike = event => {

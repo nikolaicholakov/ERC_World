@@ -2,13 +2,13 @@ import React, { RefObject, useEffect, useState } from "react";
 import { HTMLDivProps } from "types";
 import * as S from "./elements";
 
-interface IPopupProps extends HTMLDivProps {
+interface PopupProps extends HTMLDivProps {
   popupOpened: boolean;
   togglePopup: () => void;
   ref?: RefObject<HTMLDivElement>;
 }
 
-export const Popup: React.FC<IPopupProps> = ({ togglePopup, popupOpened, ...props }) => {
+export const Popup: React.FC<PopupProps> = ({ togglePopup, popupOpened, ...props }) => {
   return (
     <S.PopupContainer {...props} onClick={togglePopup} popupOpened={popupOpened}></S.PopupContainer>
   );

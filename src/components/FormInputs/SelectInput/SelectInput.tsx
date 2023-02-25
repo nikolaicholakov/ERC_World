@@ -3,14 +3,14 @@ import { useController, UseControllerProps, FieldValues } from "react-hook-form"
 import { KeyOfType } from "types";
 import * as S from "./elements";
 
-export interface ISelectInput<T extends FieldValues = any>
+export interface SelectInput<T extends FieldValues = any>
   extends Omit<UseControllerProps<T>, "name"> {
   name: KeyOfType<T>;
   label?: string;
   ref?: ForwardedRef<HTMLSelectElement>;
 }
 
-export const SelectInput = ({ name, control, label, ...props }: ISelectInput) => {
+export const SelectInput = ({ name, control, label, ...props }: SelectInput) => {
   const {
     field: { onChange, onBlur, value, ref },
     fieldState: { invalid, isTouched, isDirty, error },

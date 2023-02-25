@@ -1,10 +1,10 @@
 import { NextPage } from "next";
-import { EditProfile } from "sections";
+import { EditProfilePage } from "views";
 
 const Profile: NextPage = () => {
   return (
     <main>
-      <EditProfile />
+      <EditProfilePage />
     </main>
   );
 };

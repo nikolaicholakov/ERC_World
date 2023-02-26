@@ -2,10 +2,11 @@ import React, { useRef, useState, RefObject, useEffect } from "react";
 import { IHomeHeroSwiperCard } from "types";
 import * as S from "./elements";
 import { SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper";
+import { Autoplay, Pagination, EffectCreative } from "swiper";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/effect-creative";
 
 import { Swiper as TSwiper, SwiperOptions } from "swiper/types";
 
@@ -19,12 +20,24 @@ export const HomeHeroSwiper: React.FC<HomeHeroSwiper> = ({ swiperCards, ...props
 
   const swiperSettings: SwiperOptions = {
     loop: true,
-    speed: 800,
-    autoplay: { delay: 4000, disableOnInteraction: false },
+    speed: 1300,
+    effect: "creative",
+    autoplay: { delay: 3000, disableOnInteraction: false },
     pagination: {
       clickable: true
     },
-    modules: [Autoplay, Pagination]
+    creativeEffect: {
+      prev: {
+        shadow: true,
+        translate: [0, "100%", 0]
+      },
+      next: {
+        translate: [0, "-11%", 0],
+        opacity: 0.1,
+        scale: 0.85
+      }
+    },
+    modules: [EffectCreative, Pagination, Autoplay]
   };
 
   return (
